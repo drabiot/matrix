@@ -5,16 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/05/13 18:34:44 by tchartie          #+#    #+#              #
-#    Updated: 2026/05/13 19:16:54 by tchartie         ###   ########.fr        #
+#    Created: 2026/05/13 19:56:04 by tchartie          #+#    #+#              #
+#    Updated: 2026/05/13 19:57:04 by tchartie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #============ NAME ============#
 
-NAME				= 	libmatrix.a
-
-NAME_TEST			=	tester
+NAME				=	tester
 
 #========= COMPILATOR =========#
 
@@ -40,59 +38,39 @@ WHITE				=	\033[0;97m
 
 INC_DIR				= 	./inc/ \
 						./inc/Core/ \
-						./inc/Functions	/
+						./inc/Functions/
 
 INC_DIR				:=	$(addprefix -I, $(INC_DIR))
 
-SRC_DIR 			=	src/
-SRC_NAMES 			=	Core/Vector.cpp
+DIR					=	ressources/
+NAMES				=	main.cpp
 
-TEST_DIR			=	ressources/
-TEST_NAMES			=	main.cpp
-
-SRC 				=	$(addprefix $(SRC_DIR), $(SRC_NAMES))
-
-TEST				=	$(addprefix $(TEST_DIR), $(TEST_NAMES))
+TEST				=	$(addprefix $(DIR), $(NAMES))
 
 OBJ_DIR 			= 	obj/
-OBJ_NAME 			= 	$(SRC_NAMES:.cpp=.o)
-OBJ_NAME_B			=	$(SRC_NAMES_B:.cpp=.o)
-OBJ_NAME_T			=	$(TEST_NAMES:.cpp=.o)
-OBJ 				= 	$(patsubst %, $(OBJ_DIR)%, $(OBJ_NAME))
-OBJ_TEST			=	$(patsubst %, $(OBJ_DIR)%, $(OBJ_NAME_T))
+OBJ_NAME			=	$(NAMES:.cpp=.o)
+OBJ					=	$(patsubst %, $(OBJ_DIR)%, $(OBJ_NAME))
 
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-	@ar -rcs $(NAME) $(OBJ) 
-	@echo "$(GREEN)matrix successfully compiled! $(BASE_COLOR)"
+	@$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) -o $(NAME)
+	@echo "$(GREEN)Tester successfully compiled! $(BASE_COLOR)"
 
-$(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
-	@echo "$(MAGENTA)Compiling: $< $(BASE_COLOR)"
-
-$(OBJ_DIR)%.o:$(TEST_DIR)%.cpp
+$(OBJ_DIR)%.o:$(DIR)%.cpp
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
 	@echo "$(YELLOW)Compiling: $< $(BASE_COLOR)"
 
-tester:		all $(OBJ_TEST)
-	@$(CC) $(CFLAGS) $(INC_DIR) $(OBJ_TEST) -L. -lmatrix -o $(NAME_TEST) 
-	@echo "$(GREEN)Tester successfully compiled! $(BASE_COLOR)"
-
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(BLUE)matrix objects files cleanned! $(BASE_COLOR)"
+	@echo "$(BLUE)Objects files cleaned! $(BASE_COLOR)"
 
 fclean:		clean
 	@rm -f $(NAME)
-	@rm -f $(NAME_BONUS)
-	@rm -f $(NAME_TEST)
-	@echo "$(CYAN)matrix executable file$(BLUE)" $(NAME) "$(CYAN)&$(BLUE) "$(NAME_BONUS)" $(CYAN)cleanned!$(BASE_COLOR)"
-	@echo "$(MAGENTA)Tester objects files cleanned! $(BASE_COLOR)"
+	@echo "$(CYAN)Tester cleaned! $(BASE_COLOR)"
 
-re: fclean all 
+re: fclean all
 
-.PHONY :	all test clean fclean re
+.PHONY:		all clean fclean re

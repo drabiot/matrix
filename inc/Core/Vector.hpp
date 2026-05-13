@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 19:25:31 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/13 20:15:26 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,30 @@
 
 # include "utils.hpp"
 
+template<typename K>
 class	Vector {
 private:
 	size_t	_size;
-	int		*_content;
+	K		*_content;
 
 public:
 	Vector(void);
-	Vector(int *newContent, size_t newSize);
+	Vector(K *newContent, size_t newSize);
 	~Vector(void);
 
+	//Utils
 	void	displayVector(void);
+
+	//Functions
+	void	add(const Vector<K>	&v);
+	void	sub(const Vector<K>	&v);
+	void	scl(K a);
 };
+
+# include "../../src/Core/Vector.tpp"
+
+# include "../../src/Functions/Add.tpp"
+# include "../../src/Functions/Substract.tpp"
+# include "../../src/Functions/Scale.tpp"
 
 #endif //VECTOR_HPP
