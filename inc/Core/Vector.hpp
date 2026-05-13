@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 20:15:26 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/13 21:08:08 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ public:
 	~Vector(void);
 
 	//Utils
-	void	displayVector(void);
+	template<typename U>
+	friend std::ostream& operator<<(std::ostream& os, const Vector<U>& v);
 
 	//Functions
 	void	add(const Vector<K>	&v);
@@ -37,8 +38,8 @@ public:
 
 # include "../../src/Core/Vector.tpp"
 
-# include "../../src/Functions/Add.tpp"
-# include "../../src/Functions/Substract.tpp"
-# include "../../src/Functions/Scale.tpp"
+# include "../../src/Functions/Vector/Add.tpp"
+# include "../../src/Functions/Vector/Substract.tpp"
+# include "../../src/Functions/Vector/Scale.tpp"
 
 #endif //VECTOR_HPP

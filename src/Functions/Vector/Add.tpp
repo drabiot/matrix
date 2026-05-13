@@ -6,11 +6,9 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:11:45 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 20:12:54 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/13 21:08:56 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Vector.hpp"
 
 template<typename K>
 void	Vector<K>::add(const Vector<K>	&v) {
