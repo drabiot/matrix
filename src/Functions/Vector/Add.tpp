@@ -6,10 +6,12 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:11:45 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 21:08:56 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:18:05 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Time complexity:  O(n) where n = size of the vector
+// Space complexity: O(1)
 template<typename K>
 void	Vector<K>::add(const Vector<K>	&v) {
 	if (this->_size != v._size)
