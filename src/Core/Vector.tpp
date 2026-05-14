@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:39:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 15:45:13 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:17:26 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@ Vector<K>::Vector() : _size(1) {
 	this->_content = new K[_size];
 	this->_content[0] = 0;
 }
+
+template<typename K>
+Vector<K>::Vector(size_t size) : _size(size), _content(new K[size]()) {}
 
 template<typename K>
 Vector<K>::Vector(K *newContent, size_t newSize) : _size(newSize) {
@@ -28,6 +31,15 @@ Vector<K>::Vector(const Vector<K>& other) : _size(other._size) {
     this->_content = new K[_size];
     for (size_t i = 0; i < _size; ++i)
         this->_content[i] = other._content[i];
+}
+
+template<typename K>
+Vector<K>::Vector(std::initializer_list<K> list) : _size(list.size()) {
+	_content = new K[_size];
+	size_t i = 0;
+	for (const auto& elem : list) {
+		_content[i++] = elem;
+	}
 }
 
 template<typename K>
@@ -72,4 +84,14 @@ std::ostream& operator<<(std::ostream& os, const Vector<K>& v) {
 	}
 	os << std::endl;
 	return os;
+}
+
+template<typename K>
+K&  Vector<K>::operator[](size_t i) {
+	return (this->_content[i]);
+}
+
+template<typename K>
+const K&    Vector<K>::operator[](size_t i) const {
+	return (this->_content[i]);
 }
