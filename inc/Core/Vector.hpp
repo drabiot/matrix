@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 21:08:08 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:42:51 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ private:
 public:
 	Vector(void);
 	Vector(K *newContent, size_t newSize);
+	Vector(const Vector<K>& other);
+	Vector<K>& operator=(const Vector<K>& other);
 	~Vector(void);
 
 	//Utils

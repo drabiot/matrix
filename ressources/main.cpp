@@ -6,32 +6,25 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 21:13:13 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:58:43 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Vector.hpp"
-#include "Matrix.hpp"
+# include "tester.hpp"
 
 int	main(void) {
+	PRINT WHITE " --VEC. MAT. INIT-- " CENDL;
+
 	double	vecA[] = {1, 2, 3, 4};
 	double	vecB[] = {-6.0, 2.6, -4.2, 8.1};
 
 	Vector	<double>a(vecA, 4);
 	Vector	<double>b(vecB, 4);
 
+	PRINT MAGENTA "First Vector:" CENDL;
 	PRINT a CENDL;
+	PRINT MAGENTA "Second Vector:" CENDL;
 	PRINT b CENDL;
-
-	b.add(a);
-	PRINT b CENDL;
-
-	b.sub(a);
-	PRINT b CENDL;
-
-	b.scl(3);
-	PRINT b CENDL;
-
 
 	double	row0A[] = {1.0, 2.0, 3.0};
 	double	row1A[] = {4.0, 5.0, 6.0};
@@ -45,17 +38,22 @@ int	main(void) {
 
 	Matrix<double> m1(matA, 3, 3);
 	Matrix<double> m2(matB, 3, 3);
+	PRINT RED "First Matrix:" CENDL;
 	PRINT m1 CENDL;
+	PRINT RED "Second Matrix:" CENDL;
 	PRINT m2 CENDL;
 
-	m1.add(m2);
-	PRINT m1 CENDL;
+	PRINT WHITE " --ADD TESTER-- " CENDL;
+	addTesterVector(a, b);
+	addTesterMatrix(m1, m2);
 
-	m1.sub(m2);
-	PRINT m1 CENDL;
+	PRINT WHITE " --SUB TESTER-- " CENDL;
+	subTesterVector(a, b);
+	subTesterMatrix(m1, m2);
 
-	m1.scl(2);
-	PRINT m1 CENDL;
+	PRINT WHITE " --SCL TESTER-- " CENDL;
+	sclTesterVector(a, 3);
+	sclTesterMatrix(m1, 3);
 
 	return (0);
 }

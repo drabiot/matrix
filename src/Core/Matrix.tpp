@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 20:41:16 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 21:09:56 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:45:31 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,34 @@ Matrix<K>::Matrix(K **newContent, size_t newRows, size_t newCols) : _rows(newRow
 }
 
 template<typename K>
+Matrix<K>::Matrix(const Matrix<K>& other) : _rows(other._rows), _cols(other._cols) {
+	this->_content = new K*[this->_rows];
+	for (size_t i = 0; i < this->_rows; ++i) {
+		this->_content[i] = new K[this->_cols];
+		for (size_t j = 0; j < this->_cols; ++j)
+			this->_content[i][j] = other._content[i][j];
+	}
+}
+
+template<typename K>
+Matrix<K>& Matrix<K>::operator=(const Matrix<K>& other) {
+	if (this == &other)
+		return (*this);
+	for (size_t i = 0; i < this->_rows; ++i)
+		delete[] this->_content[i];
+	delete[] this->_content;
+	this->_rows = other._rows;
+	this->_cols = other._cols;
+	this->_content = new K*[this->_rows];
+	for (size_t i = 0; i < this->_rows; ++i) {
+		this->_content[i] = new K[this->_cols];
+		for (size_t j = 0; j < this->_cols; ++j)
+			this->_content[i][j] = other._content[i][j];
+	}
+	return (*this);
+}
+
+template<typename K>
 Matrix<K>::~Matrix() {
 	for (size_t i = 0; i < this->_rows; ++i)
 		delete[] this->_content[i];
@@ -46,7 +74,6 @@ std::ostream& operator<<(std::ostream& os, const Matrix<K>& m) {
 		}
 	}
 
-	os << RED << "Matrix:" << std::endl;
 	for (size_t i = 0; i < m._rows; ++i) {
 		os << GREEN << "[";
 		for (size_t j = 0; j < m._cols; ++j) {

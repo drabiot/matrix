@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:39:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/13 20:39:23 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:45:13 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,25 @@ Vector<K>::Vector(K *newContent, size_t newSize) : _size(newSize) {
 }
 
 template<typename K>
+Vector<K>::Vector(const Vector<K>& other) : _size(other._size) {
+    this->_content = new K[_size];
+    for (size_t i = 0; i < _size; ++i)
+        this->_content[i] = other._content[i];
+}
+
+template<typename K>
+Vector<K>& Vector<K>::operator=(const Vector<K>& other) {
+    if (this == &other)
+        return (*this);
+    delete[] this->_content;
+    this->_size = other._size;
+    this->_content = new K[this->_size];
+    for (size_t i = 0; i < this->_size; ++i)
+        this->_content[i] = other._content[i];
+    return (*this);
+}
+
+template<typename K>
 Vector<K>::~Vector() {
 	delete[] this->_content;
 }
@@ -38,7 +57,6 @@ std::ostream& operator<<(std::ostream& os, const Vector<K>& v) {
 			maxWidth = oss.str().size();
 	}
 
-	os << MAGENTA << "Vector:" << std::endl;
 	for (size_t i = 0; i < v._size; ++i) {
 		std::ostringstream oss;
 		oss << v._content[i];
@@ -52,6 +70,6 @@ std::ostream& operator<<(std::ostream& os, const Vector<K>& v) {
 		if (i + 1 < v._size)
 			os << BLUE << "," << std::endl;
 	}
-	os << std::endl << std::endl;
+	os << std::endl;
 	return os;
 }

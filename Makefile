@@ -6,7 +6,7 @@
 #    By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/13 19:56:04 by tchartie          #+#    #+#              #
-#    Updated: 2026/05/13 19:57:04 by tchartie         ###   ########.fr        #
+#    Updated: 2026/05/14 15:28:55 by tchartie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ INC_DIR				= 	./inc/ \
 INC_DIR				:=	$(addprefix -I, $(INC_DIR))
 
 DIR					=	ressources/
-NAMES				=	main.cpp
+NAMES				=	main.cpp \
+						ex00Tester.cpp
 
 TEST				=	$(addprefix $(DIR), $(NAMES))
 
