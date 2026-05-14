@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 17:16:22 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:42:07 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 	~Vector(void);
 
 	//Utils
+	size_t  size(void) const;
 	template<typename U>
 	friend std::ostream& operator<<(std::ostream& os, const Vector<U>& v);
 	
@@ -41,14 +42,17 @@ public:
 	void		add(const Vector<K>	&v);
 	void		sub(const Vector<K>	&v);
 	void		scl(K a);
-
-	Vector<K>	linear_combination(Vector<K>* u, K* coefs);
 };
+
+template<typename K>
+Vector<K>	linear_combination(std::initializer_list<Vector<K>> u, std::initializer_list<K> coefs);
 
 # include "../../src/Core/Vector.tpp"
 
 # include "../../src/Functions/Vector/Add.tpp"
 # include "../../src/Functions/Vector/Substract.tpp"
 # include "../../src/Functions/Vector/Scale.tpp"
+
+# include "../../src/Functions/Vector/Linear_Combination.tpp"
 
 #endif //VECTOR_HPP

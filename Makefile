@@ -6,7 +6,7 @@
 #    By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/13 19:56:04 by tchartie          #+#    #+#              #
-#    Updated: 2026/05/14 15:28:55 by tchartie         ###   ########.fr        #
+#    Updated: 2026/05/14 17:28:50 by tchartie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC					=	c++
 
 #=========== FLAGS ============#
 
-CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
+CFLAGS				=	-Wall -Wextra -Werror -g -std=c++17
 
 #=========== COLOR ============#
 
@@ -44,7 +44,8 @@ INC_DIR				:=	$(addprefix -I, $(INC_DIR))
 
 DIR					=	ressources/
 NAMES				=	main.cpp \
-						ex00Tester.cpp
+						ex00Tester.cpp \
+						ex01Tester.cpp
 
 TEST				=	$(addprefix $(DIR), $(NAMES))
 

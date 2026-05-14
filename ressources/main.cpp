@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 17:22:56 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:43:05 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ int	main(void) {
 	PRINT WHITE " --SCL TESTER-- " CENDL;
 	sclTesterVector(a, 3);
 	sclTesterMatrix(m1, 3);
+
+	PRINT WHITE " --LINEAR COMBINATION TESTER-- " CENDL;
+	linearCombinationTester();
 
 	return (0);
 }

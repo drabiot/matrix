@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:39:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 17:17:26 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:42:10 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ Vector<K>& Vector<K>::operator=(const Vector<K>& other) {
 template<typename K>
 Vector<K>::~Vector() {
 	delete[] this->_content;
+}
+
+template<typename K>
+size_t  Vector<K>::size(void) const {
+	return (this->_size);
 }
 
 template<typename K>
