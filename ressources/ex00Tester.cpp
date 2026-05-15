@@ -6,12 +6,11 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:19:53 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 15:58:30 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/15 16:54:24 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Vector.hpp"
-#include "Matrix.hpp"
+#include "matlib.hpp"
 
 void	addTesterVector(Vector <double>a, Vector <double>b) {
 	PRINT MAGENTA "    -Vector-  " CENDL;

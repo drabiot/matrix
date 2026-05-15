@@ -6,11 +6,10 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:30:54 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 17:53:50 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/15 16:52:49 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Vector.hpp"
 #include <cmath>
 
 // L = number of vectors, D = dimension of vectors

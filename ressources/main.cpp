@@ -6,11 +6,12 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 17:47:29 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/15 16:54:42 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "tester.hpp"
+# include "matlib.hpp"
+#include "tester.hpp"
 
 int	main(void) {
 	PRINT WHITE " --VEC. MAT. INIT-- " CENDL;

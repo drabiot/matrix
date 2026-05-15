@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 17:42:07 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/15 16:53:37 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,10 @@ public:
 	void		scl(K a);
 };
 
-template<typename K>
-Vector<K>	linear_combination(std::initializer_list<Vector<K>> u, std::initializer_list<K> coefs);
-
 # include "../../src/Core/Vector.tpp"
 
 # include "../../src/Functions/Vector/Add.tpp"
 # include "../../src/Functions/Vector/Substract.tpp"
 # include "../../src/Functions/Vector/Scale.tpp"
-
-# include "../../src/Functions/Vector/Linear_Combination.tpp"
 
 #endif //VECTOR_HPP
