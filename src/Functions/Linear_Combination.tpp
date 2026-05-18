@@ -6,11 +6,9 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:30:54 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 19:40:17 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/18 21:32:09 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <cmath>
 
 // L = number of vectors, D = dimension of vectors
 // Time complexity:  O(n) where n = L * D

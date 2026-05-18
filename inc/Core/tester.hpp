@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:27:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 19:22:52 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/18 21:44:58 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ void	sclTesterMatrix(void);
 
 // ex01
 void	linear_combinationTester(void);
+
+// ex02
+void	linear_interpolationTester(void);
 
 #endif //TESTER_HPP

@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 19:37:56 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/18 21:51:43 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 
 public:
 	Matrix(void);
+	Matrix(size_t newRows, size_t newCols);
 	Matrix(K **newContent, size_t newRows, size_t newCols);
 	Matrix(const Matrix<K>& other);
 	Matrix(std::initializer_list<std::initializer_list<K>> list);

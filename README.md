@@ -21,6 +21,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Sub](#sub)
   - [Scl](#scl)
   - [Linear Combination](#linear-combination)
+  - [Linear Interpolation](#linear-interpolation)
 - [Sources](#sources)
 
 
@@ -202,6 +203,79 @@ auto res = linear_combination({v1, v2, v3}, {10.0, -2.0, 0.5}); // res = {10.0, 
 \Rightarrow
 \begin{bmatrix}
 10 & -2 & 0.5
+\end{bmatrix}
+```
+
+### LINEAR INTERPOLATION
+Returns the linear interpolation between two values using `fma` for precision.
+
+```cpp
+V       lerp(V u, V v, float t);
+Vector<V> lerp(Vector<V> u, Vector<V> v, float t);
+Matrix<V> lerp(Matrix<V> u, Matrix<V> v, float t);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| Scalar | O(1) | O(1) |
+| Vector | O(D) | O(D) |
+| Matrix | O(R × C) | O(R × C) |
+
+> D = dimension of vectors, R = rows, C = cols
+
+```cpp
+lerp(0., 1., 0.5);								// 0.5
+lerp(21., 42., 0.3);							// 27.3
+
+Vector<double> u({2., 1.});
+Vector<double> v({4., 2.});
+lerp(u, v, 0.3);								// {2.6, 1.3}
+
+Matrix<double> m1({{2., 1.}, {3., 4.}});
+Matrix<double> m2({{20., 10.}, {30., 40.}});
+lerp(m1, m2, 0.5);								// {{11., 5.5}, {16.5, 22.}}
+```
+
+```math
+\begin{bmatrix}
+C_x \\
+C_y 
+\end{bmatrix}
+\mathbin{=}
+\begin{bmatrix}
+A_x {\times 1 - t} + B_x {\times t} \\
+A_Y {\times 1 - t} + B_y {\times t}
+\end{bmatrix}
+\mathbin{=}
+\begin{bmatrix}
+A_x - A_x {\times t} + B_x {\times t} \\
+A_Y - A_y {\times t} + B_y {\times t}
+\end{bmatrix}
+\mathbin{=}
+\begin{bmatrix}
+A_x + (B_x - A_x) {\times t} \\
+A_Y + (B_y - A_y) {\times t}
+\end{bmatrix}
+\\[10pt]
+\Rightarrow
+\begin{bmatrix}
+2 + (4 - 2) {\times 0.3} \\
+1 + (2 - 1) {\times 0.3}
+\end{bmatrix}
+\mathbin{=}
+\begin{bmatrix}
+2 + (2) {\times 0.3} \\
+1 + (1) {\times 0.3}
+\end{bmatrix}
+\mathbin{=}
+\begin{bmatrix}
+2 + 0.6 \\
+1 + 0.3
+\end{bmatrix}
+\mathbin{=}
+\begin{bmatrix}
+2.6 \\
+1.3
 \end{bmatrix}
 ```
 
