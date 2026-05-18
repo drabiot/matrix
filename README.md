@@ -256,7 +256,8 @@ A_Y - A_y {\times t} + B_y {\times t}
 A_x + (B_x - A_x) {\times t} \\
 A_Y + (B_y - A_y) {\times t}
 \end{bmatrix}
-\\[10pt]
+```
+```math
 \Rightarrow
 \begin{bmatrix}
 2 + (4 - 2) {\times 0.3} \\
