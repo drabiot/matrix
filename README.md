@@ -152,11 +152,23 @@ v.sub(2); // u = {8.0, 10.0, 12.0}
 ### LINEAR COMBINATION
 Returns the linear combination of vectors with given coefficients using `fma` for precision.
 
+```math
+\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\&
+\begin{bmatrix} 10 \\ -2 \\ 0.5 \end{bmatrix}
+\Rightarrow
+\begin{bmatrix} 1^×10 & 0^×10 & 0^×10 \\ 0^×-2 & 1^×-2 & 0^×-2 \\ 0^×0.5 & 0^×0.5 & 1^×0.5 \end{bmatrix}
+\Rightarrow
+\begin{bmatrix} 10 & 0 & 0 \\ + & + & + \\ 0 & -2 & 0 \\ + & + & + \\ 0.5 & 0 & 0 \end{bmatrix}
+\Rightarrow
+\begin{bmatrix} 10 & -2 & 0.5 \end{bmatrix}
+```
+
 ```cpp
-Vector<K> linear_combination(initializer_list<Vector<K>> u, initializer_list<K> coefs);
-Vector<K> linear_combination(initializer_list<Vector<K>> u, Vector<K> coefs);
-Vector<K> linear_combination(Matrix<K> u, initializer_list<K> coefs);
-Vector<K> linear_combination(Matrix<K> u, Vector<K> coefs);
+Vector<K>	linear_combination(initializer_list<Vector<K>> u, initializer_list<K> coefs);
+Vector<K>	linear_combination(initializer_list<Vector<K>> u, Vector<K> coefs);
+Vector<K>	linear_combination(Matrix<K> u, initializer_list<K> coefs);
+Vector<K>	linear_combination(Matrix<K> u, Vector<K> coefs);
 ```
 
 | Time complexity | Space complexity |
