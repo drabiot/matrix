@@ -154,14 +154,14 @@ Returns the linear combination of vectors with given coefficients using `fma` fo
 
 ```math
 \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
-\&
+\mathbin{\&}
 \begin{bmatrix} 10 \\ -2 \\ 0.5 \end{bmatrix}
 \Rightarrow
-\begin{bmatrix} 1^×10 & 0^×10 & 0^×10 \\ 0^×-2 & 1^×-2 & 0^×-2 \\ 0^×0.5 & 0^×0.5 & 1^×0.5 \end{bmatrix}
+\begin{bmatrix} 1^{\times 10} & 0^{\times 10} & 0^{\times 10} \\ 0^{\times -2} & 1^{\times -2} & 0^{\times -2} \\ 0^{\times 0.5} & 0^{\times 0.5} & 1^{\times 0.5} \end{bmatrix}
 \Rightarrow
-\begin{bmatrix} 10 & 0 & 0 \\ + & + & + \\ 0 & -2 & 0 \\ + & + & + \\ 0.5 & 0 & 0 \end{bmatrix}
+\begin{bmatrix} 10 & 0 & 0 \\ + & + & + \\ 0 & -2 & 0 \\ + & + & + \\ 0 & 0 & 0.5 \end{bmatrix}
 \Rightarrow
-\begin{bmatrix} 10 & -2 & 0.5 \end{bmatrix}
+[ 10 \quad -2 \quad 0.5 ]
 ```
 
 ```cpp
