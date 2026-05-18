@@ -6,47 +6,43 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/15 16:54:42 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/18 19:48:52 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "matlib.hpp"
 #include "tester.hpp"
 
-int	main(void) {
-	PRINT WHITE " --VEC. MAT. INIT-- " CENDL;
+int	main(int argc, char **argv) {
+	bool	all = (argc == 1) ? true : false;
 
-	Vector	<double>a({1, 2, 3, 4});
-	Vector	<double>b({-6.0, 2.6, -4.2, 8.1});
+	if (argc > 1 && str(argv[1]) == "help") {
+		NLINE;
+		PRINT MAGENTA "If you want to test everything at once type " RED "./tester" MAGENTA " without argument" CENDL;
+		NLINE;
+		PRINT GREEN "If you want to one specific function type " YELLOW "./tester <name_of_your_function>" CENDL;
+		PRINT BLUE "Here all of the function:\n" CYAN "  - add\n  - sub\n  - scl\n  - linear_combination" CENDL;
+		return (0);
+	}
 
-	PRINT MAGENTA "First Vector:" CENDL;
-	PRINT a CENDL;
-	PRINT MAGENTA "Second Vector:" CENDL;
-	PRINT b CENDL;
-
-	Matrix<double> m1 = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
-	Matrix<double> m2 = {{2.5, 4.4, 2.9}, {-1.2, -5.0, 6.5}, {3.3, 4.2, -9.0}};
-
-	PRINT RED "First Matrix:" CENDL;
-	PRINT m1 CENDL;
-	PRINT RED "Second Matrix:" CENDL;
-	PRINT m2 CENDL;
-
-	PRINT WHITE " --ADD TESTER-- " CENDL;
-	addTesterVector(a, b);
-	addTesterMatrix(m1, m2);
-
-	PRINT WHITE " --SUB TESTER-- " CENDL;
-	subTesterVector(a, b);
-	subTesterMatrix(m1, m2);
-
-	PRINT WHITE " --SCL TESTER-- " CENDL;
-	sclTesterVector(a, 3);
-	sclTesterMatrix(m1, 3);
-
-	PRINT WHITE " --LINEAR COMBINATION TESTER-- " CENDL;
-	PRINT linear_combination({{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {10., -2., 0.5}) CENDL;
-	PRINT linear_combination({{1., 2., 3.}, {0., 10., -100.}}, {10., -2.}) CENDL;
-
+	if (all || (argc > 1 && str(argv[1]) == "add")) {
+		PRINT WHITE " --ADD TESTER-- " CENDL;
+		addTesterVector();
+		addTesterMatrix();
+	}
+	if (all || (argc > 1 && str(argv[1]) == "sub")) {
+		PRINT WHITE " --SUB TESTER-- " CENDL;
+		subTesterVector();
+		subTesterMatrix();
+	}
+	if (all || (argc > 1 && str(argv[1]) == "scl")) {
+		PRINT WHITE " --SCL TESTER-- " CENDL;
+		sclTesterVector();
+		sclTesterMatrix();
+	}
+	if (all || (argc > 1 && str(argv[1]) == "linear_combination")) {
+		PRINT WHITE " --LINEAR COMBINATION TESTER-- " CENDL;
+		linear_combinationTester();
+	}
 	return (0);
 }

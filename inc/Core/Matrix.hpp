@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/15 16:53:47 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/18 19:37:56 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ public:
 	~Matrix(void);
 
 	//Utils
+	size_t		getRows(void) const;
+	size_t		getCols(void) const;
+	K*			operator[](size_t i);
+	const K*	operator[](size_t i) const;
+
 	template<typename U>
 	friend std::ostream& operator<<(std::ostream& os, const Matrix<U>& m);
 

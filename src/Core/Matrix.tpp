@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 20:41:16 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/14 17:21:25 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/18 19:39:53 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,26 @@ Matrix<K>::~Matrix() {
 	for (size_t i = 0; i < this->_rows; ++i)
 		delete[] this->_content[i];
 	delete[] this->_content;
+}
+
+template<typename K>
+size_t	Matrix<K>::getRows(void) const {
+	return (this->_rows);
+}
+
+template<typename K>
+size_t	Matrix<K>::getCols(void) const {
+	return (this->_cols);
+}
+
+template<typename K>
+K*	Matrix<K>::operator[](size_t i) {
+	return (this->_content[i]);
+}
+
+template<typename K>
+const K*	Matrix<K>::operator[](size_t i) const {
+	return (this->_content[i]);
 }
 
 template<typename K>
