@@ -265,8 +265,8 @@ A_Y + (B_y - A_y) {\times t}
 \end{bmatrix}
 \mathbin{=}
 \begin{bmatrix}
-2 + (2) {\times 0.3} \\
-1 + (1) {\times 0.3}
+2 + 2 {\times 0.3} \\
+1 + 1 {\times 0.3}
 \end{bmatrix}
 \mathbin{=}
 \begin{bmatrix}
