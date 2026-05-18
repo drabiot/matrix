@@ -210,9 +210,9 @@ auto res = linear_combination({v1, v2, v3}, {10.0, -2.0, 0.5}); // res = {10.0, 
 Returns the linear interpolation between two values using `fma` for precision.
 
 ```cpp
-V       lerp(V u, V v, float t);
-Vector<V> lerp(Vector<V> u, Vector<V> v, float t);
-Matrix<V> lerp(Matrix<V> u, Matrix<V> v, float t);
+V       	lerp(V u, V v, float t);
+Vector<V>	lerp(Vector<V> u, Vector<V> v, float t);
+Matrix<V>	lerp(Matrix<V> u, Matrix<V> v, float t);
 ```
 
 | Overload | Time complexity | Space complexity |
