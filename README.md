@@ -152,18 +152,6 @@ v.sub(2); // u = {8.0, 10.0, 12.0}
 ### LINEAR COMBINATION
 Returns the linear combination of vectors with given coefficients using `fma` for precision.
 
-```math
-\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
-\mathbin{\&}
-\begin{bmatrix} 10 \\ -2 \\ 0.5 \end{bmatrix}
-\Rightarrow
-\begin{bmatrix} 1^{\times 10} & 0^{\times 10} & 0^{\times 10} \\ 0^{\times -2} & 1^{\times -2} & 0^{\times -2} \\ 0^{\times 0.5} & 0^{\times 0.5} & 1^{\times 0.5} \end{bmatrix}
-\Rightarrow
-\begin{bmatrix} 10 & 0 & 0 \\ + & + & + \\ 0 & -2 & 0 \\ + & + & + \\ 0 & 0 & 0.5 \end{bmatrix}
-\Rightarrow
-[ 10 \quad -2 \quad 0.5 ]
-```
-
 ```cpp
 Vector<K>	linear_combination(initializer_list<Vector<K>> u, initializer_list<K> coefs);
 Vector<K>	linear_combination(initializer_list<Vector<K>> u, Vector<K> coefs);
@@ -178,10 +166,43 @@ Vector<K>	linear_combination(Matrix<K> u, Vector<K> coefs);
 > L = number of vectors, D = dimension of vectors
 
 ```cpp
-Vector<float> e1({1.0, 0.0, 0.0});
-Vector<float> e2({0.0, 1.0, 0.0});
+Vector<float> v1({1.0, 0.0, 0.0});
+Vector<float> v2({0.0, 1.0, 0.0});
+Vector<float> v3({0.0, 0.0, 1.0});
 
-auto res = linear_combination({e1, e2}, {2.0f, 3.0f}); // res = {2.0, 3.0, 0.0}
+auto res = linear_combination({v1, v2, v3}, {10.0, -2.0, 0.5}); // res = {10.0, 2.0, 0.5}
+```
+
+```math
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\ 
+0 & 0 & 1 
+\end{bmatrix}
+\mathbin{\&}
+\begin{bmatrix}
+10 \\
+-2 \\
+0.5
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+1^{\times 10} & 0^{\times 10} & 0^{\times 10} \\
+0^{\times -2} & 1^{\times -2} & 0^{\times -2} \\
+0^{\times 0.5} & 0^{\times 0.5} & 1^{\times 0.5}
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+10 & 0 & 0 \\
++ & + & + \\
+0 & -2 & 0 \\
++ & + & + \\
+0 & 0 & 0.5
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+10 & -2 & 0.5
+\end{bmatrix}
 ```
 
 ## Sources
