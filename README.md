@@ -22,6 +22,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Scl](#scl)
   - [Linear Combination](#linear-combination)
   - [Linear Interpolation](#linear-interpolation)
+  - [Dot Product](#dot-product)
 - [Sources](#sources)
 
 
@@ -81,6 +82,7 @@ Open the project
 | Scl | Scales a vector or matrix by a scalar |
 | Linear Combination | Returns a linear combination of vectors with given coefficients |
 | Linear Interpolation | Returns the linear interpolation between two values |
+| Dot Product | Returns the sum of the element-wise products of two vectors |
 
 ## Documentation
 
@@ -280,6 +282,50 @@ A_Y + (B_y - A_y) {\times t}
 1.3
 \end{bmatrix}
 ```
+
+### DOT PRODUCT
+Returns the sum of the element-wise products of two vectors using `fma` for precision.
+
+```cpp
+K   dot(Vector<K> &v);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| Vector | O(n) | O(1) |
+
+> n = size of both vectors (must be equal)
+
+```cpp
+Vector<float>	u({1., 0.});
+Vector<float>	v({0., 1.});
+u.dot(v);						// 0.
+
+Vector<float>	u({1., 1.});
+Vector<float>	v({1., 1.});
+u.dot(v);						// 2.
+
+Vector<float>	u({-1., 6.});
+Vector<float>	v({3., 2.});
+u.dot(v);						// 9.  →  (-1 × 3) + (6 × 2)
+```
+
+```math
+\begin{bmatrix}
+A_x \\
+A_y \\
+A_z
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+B_x \\
+B_y \\
+B_z
+\end{bmatrix}
+\mathbin{=}
+A_x {\cdot B_x} + A_y {\cdot B_y} + A_z {\cdot B_z}
+```
+
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
