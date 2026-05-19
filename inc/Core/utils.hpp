@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:27:02 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 21:32:16 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 14:39:47 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <iomanip>
 # include <sstream>
 # include <initializer_list>
+# include <algorithm>
 
 #include <cmath>
 

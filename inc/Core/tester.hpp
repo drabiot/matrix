@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:27:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 13:25:46 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 14:22:12 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ void	linear_interpolationTester(void);
 
 // ex03
 void	dot_productTester(void);
+
+// ex04
+void	normTester(void);
 
 #endif //TESTER_HPP

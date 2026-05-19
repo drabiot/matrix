@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 13:31:04 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 14:11:36 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ public:
 	void		scl(K a);
 
 	K			dot(Vector<K> &v);
+
+	float		norm_1(void);
+	float		norm(void);
+	float		norm_inf(void);
 };
 
 # include "../../src/Core/Vector.tpp"
@@ -53,5 +57,7 @@ public:
 # include "../../src/Functions/Vector/Scale.tpp"
 
 # include "../../src/Functions/Vector/Dot_Product.tpp"
+
+# include "../../src/Functions/Vector/Norm.tpp"
 
 #endif //VECTOR_HPP
