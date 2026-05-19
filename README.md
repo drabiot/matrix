@@ -421,7 +421,7 @@ angle_cos(u, v);			// 0.974632
 ```
 
 ```math
-cos(A, B) = \frac{A \cdot B}{\|A\| \times{\|B\|}}
+cos(u, v) = \frac{u \cdot v}{\|u\|_2 \times{\|v\|_2}}
 ```
 
 So we use [Dot Product](#dot-product) & [Norm](#norm) to compute our cosine
