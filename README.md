@@ -24,6 +24,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Linear Interpolation](#linear-interpolation)
   - [Dot Product](#dot-product)
   - [Norm](#norm)
+  - [Cosine](#cosine)
 - [Sources](#sources)
 
 
@@ -85,6 +86,7 @@ Open the project
 | Linear Interpolation | Returns the linear interpolation between two values |
 | Dot Product | Returns the sum of the element-wise products of two vectors |
 | Norm | Returns different kinds of norms of a vector |
+| Cosine | Returns the cosine of the angle between two vectors |
 
 ## Documentation
 
@@ -290,6 +292,7 @@ Returns the sum of the element-wise products of two vectors using `fma` for prec
 
 ```cpp
 K   dot(Vector<K> &v);
+K   dot(const Vector<K> &v) const;
 ```
 
 | Overload | Time complexity | Space complexity |
@@ -309,7 +312,7 @@ u.dot(v);						// 2.
 
 Vector<float>	u({-1., 6.});
 Vector<float>	v({3., 2.});
-u.dot(v);						// 9.  →  (-1 × 3) + (6 × 2)
+u.dot(v);						// 9.  =>  (-1 × 3) + (6 × 2)
 ```
 
 ```math
@@ -335,6 +338,10 @@ Returns different kinds of norms of a vector.
 float   norm_1(void);
 float   norm(void);
 float   norm_inf(void);
+
+float   norm_1(void) const;
+float   norm(void) const;
+float   norm_inf(void) const;
 ```
 
 | Overload | Time complexity | Space complexity |
@@ -384,6 +391,40 @@ u.norm_inf();	// 2.0
 \|v\|_∞ = max(|v_x|, |v_y|, ..., |v_n|)
 ```
 </div>
+
+### COSINE
+Returns the cosine of the angle between two vectors.
+
+```cpp
+float	angle_cos(Vector<K> &u, Vector<K> &v);
+float	angle_cos(const Vector<K> &u, const Vector<K> &v);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| angle_cos | O(n) | O(1) |
+
+> n = size of both vectors
+
+```cpp
+Vector<float>	u({1., 0.});
+Vector<float>	v({0., 1.});
+angle_cos(u, v);			// 0.0
+
+Vector<float>	u({1., 0.});
+Vector<float>	v({1., 0.});
+angle_cos(u, v);			// 1.0
+
+Vector<float>	u({1., 2., 3.});
+Vector<float>	v({4., 5., 6.});
+angle_cos(u, v);			// 0.974632
+```
+
+```math
+cos(A, B) = \frac{A \cdot B}{\|A\| \times{\|B\|}}
+```
+
+So we use [Dot Product](#dot-product) & [Norm](#norm) to compute our cosine
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
