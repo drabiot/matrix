@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 14:11:36 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:59:25 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,14 @@ public:
 	void		scl(K a);
 
 	K			dot(Vector<K> &v);
+	K			dot(const Vector<K> &v) const;
 
 	float		norm_1(void);
 	float		norm(void);
 	float		norm_inf(void);
+	float		norm_1(void) const;
+	float		norm(void) const;
+	float		norm_inf(void) const;
 };
 
 # include "../../src/Core/Vector.tpp"

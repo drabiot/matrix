@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 14:25:02 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:50:35 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,13 @@ int	main(int argc, char **argv) {
 		PRINT WHITE " --DOT PRODUCT TESTER-- " CENDL;
 		dot_productTester();
 	}
-		if (all || (argc > 1 && str(argv[1]) == "norm")) {
+	if (all || (argc > 1 && str(argv[1]) == "norm")) {
 		PRINT WHITE " --NORM TESTER-- " CENDL;
 		normTester();
+	}
+	if (all || (argc > 1 && str(argv[1]) == "cosine")) {
+		PRINT WHITE " --COSINE TESTER-- " CENDL;
+		cosineTester();
 	}
 	return (0);
 }

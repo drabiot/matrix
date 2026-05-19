@@ -1,3 +1,4 @@
 tester
 obj/
 libmatrix.a
+.vscode/

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matlib.hpp                                         :+:      :+:    :+:   */
+/*   Cosine.tpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/15 16:51:03 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 15:31:19 by tchartie         ###   ########.fr       */
+/*   Created: 2026/05/19 15:30:46 by tchartie          #+#    #+#             */
+/*   Updated: 2026/05/19 16:08:02 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATLIB_HPP
-# define MATLIB_HPP
+template<typename K>
+float	angle_cos(Vector<K> &u, Vector<K> &v) {
+	return (u.dot(v) / (u.norm() * v.norm()));
+}
 
-# include "Vector.hpp"
-# include "Matrix.hpp"
-
-# include "../../src/Functions/Linear_Combination.tpp"
-# include "../../src/Functions/Linear_Interpolation.tpp"
-# include "../../src/Functions/Cosine.tpp"
-
-#endif //MATLIB_HPP
+template<typename K>
+float	angle_cos(const Vector<K> &u, const Vector<K> &v) {
+	return (u.dot(v) / (u.norm() * v.norm()));
+}

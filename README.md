@@ -387,4 +387,5 @@ u.norm_inf();	// 2.0
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
+- Compute Cos of two vectors https://www.youtube.com/watch?v=2pIlGSu6Ta4
 
