@@ -80,6 +80,7 @@ Open the project
 | Sub | Subtracts two vectors or matrices element-wise |
 | Scl | Scales a vector or matrix by a scalar |
 | Linear Combination | Returns a linear combination of vectors with given coefficients |
+| Linear Interpolation | Returns the linear interpolation between two values |
 
 ## Documentation
 

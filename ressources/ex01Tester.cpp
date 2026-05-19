@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 19:20:23 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 19:40:19 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 12:48:35 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	linear_combinationTester(void) {
 
 	PRINT WHITE " --VECTOR-- " CENDL;
 	PRINT linear_combination({a, b, c}, coef) CENDL;
-	PRINT linear_combination({d, e}, coef2) CENDL;
+	PRINT linear_combination({d, e}, {10., -2.}) CENDL;
 
 	PRINT WHITE " --MATRIX-- " CENDL;
 	PRINT linear_combination(f, coef) CENDL;
-	PRINT linear_combination(g, coef2) CENDL;
+	PRINT linear_combination(g, {10., -2.}) CENDL;
 }
