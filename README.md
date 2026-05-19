@@ -363,18 +363,21 @@ u.norm_inf();	// 2.0
 ```
 <div align="center">
 <ins>Manhattan / Taxicab Norm:</ins>
+<br>
 
 ```math
 \|v\|_1 = |v_x| + |v_y| + ... + |v_n| 
 ```
 
 <ins>Euclidean Norm:</ins>
+<br>
 
 ```math
 \|v\|_2 = \sqrt{v^2_x + v^2_y + ... + v^2_n}
 ```
 
 <ins>Supremum Norm:</ins>
+<br>
 
 ```math
 \|v\|_∞ = max(|v_x|, |v_y|, ..., |v_n|)
