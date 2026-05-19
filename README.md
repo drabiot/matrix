@@ -369,13 +369,14 @@ u.norm_inf();	// 2.0
 \|v\|_1 = |v_x| + |v_y| + ... + |v_n| 
 ```
 
+<br>
 <ins>Euclidean Norm:</ins>
 <br>
 
 ```math
 \|v\|_2 = \sqrt{v^2_x + v^2_y + ... + v^2_n}
 ```
-
+<br>
 <ins>Supremum Norm:</ins>
 <br>
 
