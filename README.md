@@ -23,6 +23,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Linear Combination](#linear-combination)
   - [Linear Interpolation](#linear-interpolation)
   - [Dot Product](#dot-product)
+  - [Norm](#norm)
 - [Sources](#sources)
 
 
@@ -83,6 +84,7 @@ Open the project
 | Linear Combination | Returns a linear combination of vectors with given coefficients |
 | Linear Interpolation | Returns the linear interpolation between two values |
 | Dot Product | Returns the sum of the element-wise products of two vectors |
+| Norm | Returns different kinds of norms of a vector |
 
 ## Documentation
 
@@ -326,6 +328,58 @@ B_z
 A_x {\cdot B_x} + A_y {\cdot B_y} + A_z {\cdot B_z}
 ```
 
+### NORM
+Returns different kinds of norms of a vector.
+
+```cpp
+float   norm_1(void);
+float   norm(void);
+float   norm_inf(void);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| norm_1 (Manhattan / Taxicab) | O(n) | O(1) |
+| norm (Euclidean) | O(n) | O(1) |
+| norm_inf (Supremum) | O(n) | O(1) |
+
+> n = size of the vector
+
+```cpp
+Vector<float>	u({0., 0., 0.});
+u.norm_1();		// 0.0
+u.norm();		// 0.0
+u.norm_inf();	// 0.0
+
+Vector<float>	u({1., 2., 3.});
+u.norm_1();		// 6.0
+u.norm();		// 3.74166
+u.norm_inf();	// 3.0
+
+Vector<float>	u({-1., -2.});
+u.norm_1();		// 3.0
+u.norm();		// 2.23607
+u.norm_inf();	// 2.0
+```
+<div align="center">
+<ins>Manhattan / Taxicab Norm:</ins>
+
+```math
+\|v\|_1 = |v_x| + |v_y| + ... + |v_n| 
+```
+
+<ins>Euclidean Norm:</ins>
+
+```math
+\|v\|_2 = \sqrt{v^2_x + v^2_y + ... + v^2_n}
+```
+
+<ins>Supremum Norm:</ins>
+
+```math
+\|v\|_∞ = max(|v_x|, |v_y|, ..., |v_n|)
+```
+</div>
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
