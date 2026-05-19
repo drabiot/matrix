@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 21:56:46 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 13:24:55 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv) {
 		PRINT MAGENTA "If you want to test everything at once type " RED "./tester" MAGENTA " without argument" CENDL;
 		NLINE;
 		PRINT GREEN "If you want to one specific function type " YELLOW "./tester <name_of_your_function>" CENDL;
-		PRINT BLUE "Here all of the function:\n" CYAN "  - add\n  - sub\n  - scl\n  - linear_combination\n  - linear_interpolation" CENDL;
+		PRINT BLUE "Here all of the function:\n" CYAN "  - add\n  - sub\n  - scl\n  - linear_combination\n  - linear_interpolation\n  - dot_product" CENDL;
 		return (0);
 	}
 
@@ -47,6 +47,10 @@ int	main(int argc, char **argv) {
 	if (all || (argc > 1 && str(argv[1]) == "linear_interpolation")) {
 		PRINT WHITE " --LINEAR INTERPOLATION TESTER-- " CENDL;
 		linear_interpolationTester();
+	}
+	if (all || (argc > 1 && str(argv[1]) == "dot_product")) {
+		PRINT WHITE " --DOT PRODUCT TESTER-- " CENDL;
+		dot_productTester();
 	}
 	return (0);
 }

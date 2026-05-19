@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/15 16:53:37 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/19 13:31:04 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ public:
 	void		add(const Vector<K>	&v);
 	void		sub(const Vector<K>	&v);
 	void		scl(K a);
+
+	K			dot(Vector<K> &v);
 };
 
 # include "../../src/Core/Vector.tpp"
@@ -49,5 +51,7 @@ public:
 # include "../../src/Functions/Vector/Add.tpp"
 # include "../../src/Functions/Vector/Substract.tpp"
 # include "../../src/Functions/Vector/Scale.tpp"
+
+# include "../../src/Functions/Vector/Dot_Product.tpp"
 
 #endif //VECTOR_HPP
