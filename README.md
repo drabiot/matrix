@@ -646,16 +646,20 @@ m3.transpose();		// [[-2., 1.], [-8., -23.], [4., 4.]]
 ```math
 A =
 \begin{bmatrix}
-A_{11} & A_{12} & A_{13} \\
-A_{21} & A_{22} & A_{23} \\
-A_{31} & A_{32} & A_{33}
+A_{11} & A_{12} & \cdots & A_{1n} \\
+A_{21} & A_{22} & \cdots & A_{2n} \\
+A_{31} & A_{32} & \cdots & A_{3n} \\
+\vdots & \vdots & & \vdots \\
+A_{m1} & A_{m2} & \cdots & A_{mn}
 \end{bmatrix}
 \Rightarrow
 A^T =
 \begin{bmatrix}
-A_{11} & A_{21} & A_{31} \\
-A_{12} & A_{22} & A_{32} \\
-A_{13} & A_{23} & A_{33}
+A_{11} & A_{21} & \cdots & A_{m1} \\
+A_{12} & A_{22} & \cdots & A_{m2} \\
+A_{13} & A_{23} & \cdots & A_{m3} \\
+\vdots & \vdots & & \vdots \\
+A_{1n} & A_{2n} & \cdots & A_{mn}
 \end{bmatrix}
 ```
 ```math
@@ -680,3 +684,4 @@ A^T =
 - Compute Cross Product https://www.khanacademy.org/math/multivariable-calculus/thinking-about-multivariable-function/x786f2022:vectors-and-matrices/a/cross-products-mvc
 - Compute the product between two Matrix https://youtu.be/OC90E-fnQ7g
 - Compute the Trace of a Matrix https://youtu.be/OuDA54fWk2o
+- Transpose a Matrix https://youtu.be/jG9Swa-wCwg
