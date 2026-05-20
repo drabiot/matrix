@@ -6,10 +6,12 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 12:57:21 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 13:30:00 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 13:36:27 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Time complexity:  O(1) - cross product always performs exactly 6 multiplications and 3 additions
+// Space complexity: O(1) - result vector is always size 3
 template<typename K>
 Vector<K>	cross_product(std::initializer_list<K> u, std::initializer_list<K> v) {
 	Vector<K>	result({static_cast<K>(std::fma(u.begin()[1], v.begin()[2], -u.begin()[2] * v.begin()[1])), \
@@ -18,6 +20,8 @@ Vector<K>	cross_product(std::initializer_list<K> u, std::initializer_list<K> v) 
 	return (result);
 }
 
+// Time complexity:  O(1) - cross product always performs exactly 6 multiplications and 3 additions
+// Space complexity: O(1) - result vector is always size 3
 template<typename K>
 Vector<K>	cross_product(Vector<K> u, Vector<K> v) {
 	Vector<K>	result({static_cast<K>(std::fma(u[1], v[2], -u[2] * v[1])), \

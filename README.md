@@ -25,6 +25,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Dot Product](#dot-product)
   - [Norm](#norm)
   - [Cosine](#cosine)
+  - [Cross Product](#cross-product)
 - [Sources](#sources)
 
 
@@ -87,6 +88,7 @@ Open the project
 | Dot Product | Returns the sum of the element-wise products of two vectors |
 | Norm | Returns different kinds of norms of a vector |
 | Cosine | Returns the cosine of the angle between two vectors |
+| Cross Product | Returns the cross product of two 3D vectors |
 
 ## Documentation
 
@@ -421,10 +423,65 @@ angle_cos(u, v);			// 0.974632
 ```
 
 ```math
-cos(u, v) = \frac{u \cdot v}{\|u\|_2 \times{\|v\|_2}}
+cos(\vec{u}, \vec{v}) = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\|_2 \times{\|\vec{v}\|_2}}
 ```
 
 So we use [Dot Product](#dot-product) & [Norm](#norm) to compute our cosine
+
+### CROSS PRODUCT
+Returns the cross product of two 3D vectors.
+
+```cpp
+Vector<K>	cross_product(std::initializer_list<K> u, std::initializer_list<K> v);
+Vector<K>	cross_product(Vector<K> u, Vector<K> v);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| cross_product | O(1) | O(1) |
+
+> Cross product is strictly defined for 3D vectors, input size is always fixed.
+
+```cpp
+Vector<int>	e1({0, 0, 1});
+Vector<int>	e2({1, 0, 0});
+cross_product(e1, e2);					// [0, 1, 0]
+
+Vector<int>	e1({1, 0, 0});
+Vector<int>	e2({0, 1, 0});
+cross_product(e1, e2);					// [0, 0, 1]
+
+cross_product({1, 2, 3}, {4, 5, 6});	// [-3, 6, -3]
+```
+
+```math
+\vec{u}
+=
+\begin{bmatrix}
+u_1 \\
+u_2 \\
+u_3
+\end{bmatrix}
+
+\vec{v}
+=
+\begin{bmatrix}
+v_1 \\
+v_2 \\
+v_3
+\end{bmatrix}
+```
+
+```math
+\vec{u} \times{\vec{v}}
+=
+\begin{bmatrix}
+u_2v_3 - u_3v_2 \\
+u_3v_1 - u_1v_3 \\
+u_1v_2 - u_2v_1
+\end{bmatrix}
+
+```
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
