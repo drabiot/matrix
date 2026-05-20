@@ -26,6 +26,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Norm](#norm)
   - [Cosine](#cosine)
   - [Cross Product](#cross-product)
+  - [Matrix Multiplication](#matrix-multiplication)
 - [Sources](#sources)
 
 
@@ -89,6 +90,7 @@ Open the project
 | Norm | Returns different kinds of norms of a vector |
 | Cosine | Returns the cosine of the angle between two vectors |
 | Cross Product | Returns the cross product of two 3D vectors |
+| Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector |
 
 ## Documentation
 
@@ -480,8 +482,99 @@ u_2v_3 - u_3v_2 \\
 u_3v_1 - u_1v_3 \\
 u_1v_2 - u_2v_1
 \end{bmatrix}
+```
+
+### MATRIX MULTIPLICATION
+Returns the product of a matrix with a vector or another matrix.
+
+```cpp
+Vector<K>	mul_vec(std::initializer_list<K> vec);
+Vector<K>	mul_vec(Vector<K> vec);
+
+Matrix<K>	mul_mat(Matrix<K> mat);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| mul_vec | O(nm) | O(m) |
+| mul_mat | O(nmp) | O(mp) |
+
+> For `mul_vec`: A ∈ R^(m×n), u ∈ R^n => result ∈ R^m  
+> For `mul_mat`: A ∈ R^(m×n), B ∈ R^(n×p) => result ∈ R^(m×p)
+
+```cpp
+Matrix<double> m1({{1., 0.}, {0., 1.}});
+Matrix<double> m2({{2., 1.}, {4., 2.}});
+
+m1.mul_vec({4., 2.});		// [4., 2.]
+m1.mul_vec({4., 2.});		// [4., 2.]
+m2.mul_vec({4., 2.});		// [10., 20.]
+
+m1.mul_mat(m1);				// [[1., 0.], [0., 1.]]
+m1.mul_mat(m2);				// [[2., 1.], [4., 2.]]
+m2.mul_mat(m1);				// [[2., 1.], [4., 2.]]
+m2.mul_mat(m2);				// [[8., 4.], [16., 8.]]
+```
+
+<div align="center">
+<ins>Matrix with Vector Multiplication:</ins>
+<br>
+</div>
+
+```math
+A =
+\begin{bmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22}
+\end{bmatrix}
+B =
+\begin{bmatrix}
+B_1 \\
+B_2 \\
+\end{bmatrix}
+```
+
+```math
+A \times{B} =
+\begin{bmatrix}
+A_{11} \times{B_1} + A_{12} \times{B_1} \\
+A_{21} \times{B_2} + A_{22} \times{B_2}
+\end{bmatrix}
 
 ```
+
+<div align="center">
+<ins>Two Matrix Multiplication:</ins>
+<br>
+</div>
+
+```math
+A =
+\begin{bmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22} \\
+A_{31} & A_{32}
+\end{bmatrix}
+B =
+\begin{bmatrix}
+B_{11} & B_{12} & B_{13} \\
+B_{21} & B_{22} & B_{23} \\
+\end{bmatrix}
+```
+
+```math
+A \times B =
+\begin{bmatrix}
+A_{11} \times B_{11} + A_{12} \times B_{21} & A_{11} \times B_{12} + A_{12} \times B_{22} & A_{11} \times B_{13} + A_{12} \times B_{23} \\
+A_{21} \times B_{11} + A_{22} \times B_{21} & A_{21} \times B_{12} + A_{22} \times B_{22} & A_{21} \times B_{13} + A_{22} \times B_{23} \\
+\end{bmatrix}
+```
+
+To multiply two matrices, the number of columns of the first matrix must equal the number of rows of the second matrix.
+
+If A is a matrix of dimension n × p and B is a matrix of dimension p × m,
+the product of A by B, denoted A × B or AB, is a matrix of dimension n × m
+whose coefficient at row i and column j is obtained by multiplying the i-th row of A by the j-th column of B.
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
