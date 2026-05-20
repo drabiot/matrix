@@ -29,6 +29,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Matrix Multiplication](#matrix-multiplication)
   - [Trace](#trace)
   - [Transpose](#transpose)
+  - [Row-Echelon Form](#row-echelon-form)
 - [Sources](#sources)
 
 
@@ -95,6 +96,7 @@ Open the project
 | Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector |
 | Trace | Returns the Trace of the Square Matrix |
 | Transpose | Returns the Transpose of a Matrix |
+| Row-Echelon Form | Returns the Row-Echelon Form of the Matrix |
 
 ## Documentation
 
@@ -693,6 +695,51 @@ A^T =
 \end{bmatrix}
 ```
 
+### ROW-ECHELON FORM
+
+To be in row-echelon form, a matrix must have the following properties:
+
+1. If a row does'nt consist entirely of zeros, then the first non-zero number in the row is a 1.
+
+2. All zero rows are at the bottom of the matrix.
+
+3. In any two successice rows that do no consist entirely of zeros, the leading 1 in the lower row occurs farther to the right than the leading 1 in the higher row.
+
+Every matrix can be transform into row echelon form by a sequence of elementary row operations, a process called Gaussian elimination.
+
+```math
+A =
+\begin{bmatrix}
+2 & 3 & 4 \\
+4 & 6 & 8 \\
+1 & 3 & 1
+\end{bmatrix}
+\xrightarrow{R_2 = R_2 - 2R_1}
+\begin{bmatrix}
+2 & 3 & 4 \\
+0 & 0 & 0 \\
+1 & 3 & 1
+\end{bmatrix}
+\xrightarrow[R_2 \leftrightarrow R_3]{R_1 = R_1 - 2R_3}
+\begin{bmatrix}
+0 & -3 & 2 \\
+1 & 3 & 1 \\
+0 & 0 & 0
+\end{bmatrix}
+\xrightarrow[R_1 \leftrightarrow R_2]{}
+\begin{bmatrix}
+1 & 3 & 1 \\
+0 & -3 & 2 \\
+0 & 0 & 0
+\end{bmatrix}
+\xrightarrow{R_2 = -\frac{1}{3}R_2}
+\begin{bmatrix}
+1 & 3 & 1 \\
+0 & 1 & \frac{-2}{3} \\
+0 & 0 & 0
+\end{bmatrix}
+```
+
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
 - Compute Cos of two vectors https://www.youtube.com/watch?v=2pIlGSu6Ta4
@@ -700,3 +747,5 @@ A^T =
 - Compute the product between two Matrix https://youtu.be/OC90E-fnQ7g
 - Compute the Trace of a Matrix https://youtu.be/OuDA54fWk2o
 - Transpose a Matrix https://youtu.be/jG9Swa-wCwg
+- Better understand Row-Echelon Form Matrix & how to Transform a Matrix into one https://youtu.be/oXMPQ-6YnGA
+- Gaussian Elimination algorythm & explication https://fr.wikipedia.org/wiki/%C3%89limination_de_Gauss-Jordan
