@@ -599,6 +599,27 @@ m2.trace();		//-21
 
 The trace of a matrix is only defined for square matrices and is the sum of all diagonal values.
 
+```math
+A =
+\begin{bmatrix}
+A_{11} & A_{12} & A_{13} \\
+A_{21} & A_{22} & A_{23} \\
+A_{31} & A_{32} & A_{33}
+\end{bmatrix}
+\Rightarrow
+A_{11} + A_{22} + A_{33}
+```
+```math
+A =
+\begin{bmatrix}
+-2 & -8 & 4 \\
+1 & -23 & 4 \\
+0 & 6 & 4
+\end{bmatrix}
+\Rightarrow
+-2 + -23 + 4 = -21
+```
+
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
 - Compute Cos of two vectors https://www.youtube.com/watch?v=2pIlGSu6Ta4
