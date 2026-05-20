@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:27:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 15:53:45 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 13:15:50 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ void	normTester(void);
 
 // ex05
 void	cosineTester(void);
+
+// ex06
+void	cross_productTester(void);
 
 #endif //TESTER_HPP
