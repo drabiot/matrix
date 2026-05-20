@@ -28,6 +28,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Cross Product](#cross-product)
   - [Matrix Multiplication](#matrix-multiplication)
   - [Trace](#trace)
+  - [Transpose](#transpose)
 - [Sources](#sources)
 
 
@@ -93,6 +94,7 @@ Open the project
 | Cross Product | Returns the cross product of two 3D vectors |
 | Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector |
 | Trace | Returns the Trace of the Square Matrix |
+| Transpose | Returns the Transpose of a Matrix |
 
 ## Documentation
 
@@ -618,6 +620,58 @@ A =
 \end{bmatrix}
 \Rightarrow
 -2 + -23 + 4 = -21
+```
+
+### TRANSPOSE
+Returns the transpose of a matrix.
+
+```cpp
+Matrix<K>	Matrix<K>::transpose(void);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| transpose | O(n*m) | O(n*m) |
+
+```cpp
+Matrix<double>	m1({{1., 0.}, {0., 1.}});
+Matrix<double>	m2({{-2, -8, 4}, {1, -23, 4}, {0, 6, 4}});
+Matrix<double>	m3({{-2, -8, 4}, {1, -23, 4}});
+
+m1.transpose();		// [[1., 0.], [0., 1.]]
+m2.transpose();		// [[-2., 1., 0,], [-8., -23., 6.], [4., 4., 4.]]
+m3.transpose();		// [[-2., 1.], [-8., -23.], [4., 4.]]
+```
+
+```math
+A =
+\begin{bmatrix}
+A_{11} & A_{12} & A_{13} \\
+A_{21} & A_{22} & A_{23} \\
+A_{31} & A_{32} & A_{33}
+\end{bmatrix}
+\Rightarrow
+A^T =
+\begin{bmatrix}
+A_{11} & A_{21} & A_{31} \\
+A_{12} & A_{22} & A_{32} \\
+A_{13} & A_{23} & A_{33}
+\end{bmatrix}
+```
+```math
+A =
+\begin{bmatrix}
+-2 & -8 & 4 \\
+1 & -23 & 4 \\
+0 & 6 & 4
+\end{bmatrix}
+\Rightarrow
+A^T =
+\begin{bmatrix}
+-2 & 1 & 0 \\
+-8 & -23 & 6 \\
+4 & 4 & 4
+\end{bmatrix}
 ```
 
 ## Sources

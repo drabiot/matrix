@@ -6,12 +6,12 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 16:23:53 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 16:31:56 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 16:40:03 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Time complexity:  O(m*n)
-// Space complexity: O(m*n)
+// Time complexity:  O(n*m)
+// Space complexity: O(n*m)
 template<typename K>
 Matrix<K>	Matrix<K>::transpose() {
 	Matrix<K>	result(this->_cols, this->_rows);
