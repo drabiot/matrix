@@ -486,4 +486,5 @@ u_1v_2 - u_2v_1
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
 - Compute Cos of two vectors https://www.youtube.com/watch?v=2pIlGSu6Ta4
+- Compute Cross Product https://www.khanacademy.org/math/multivariable-calculus/thinking-about-multivariable-function/x786f2022:vectors-and-matrices/a/cross-products-mvc
 
