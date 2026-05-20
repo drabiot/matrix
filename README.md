@@ -27,6 +27,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Cosine](#cosine)
   - [Cross Product](#cross-product)
   - [Matrix Multiplication](#matrix-multiplication)
+  - [Trace](#trace)
 - [Sources](#sources)
 
 
@@ -91,6 +92,7 @@ Open the project
 | Cosine | Returns the cosine of the angle between two vectors |
 | Cross Product | Returns the cross product of two 3D vectors |
 | Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector |
+| Trace | Returns the Trace of the Square Matrix |
 
 ## Documentation
 
@@ -98,8 +100,8 @@ Open the project
 Adds two vectors or matrices element-wise. Modifies the object in-place.
 
 ```cpp
-void    Vector::add(const Vector &v);
-void    Matrix::add(const Matrix &m);
+void    Vector<K>::add(const Vector &v);
+void    Matrix<K>::add(const Matrix &m);
 ```
 
 | | Vector | Matrix |
@@ -120,8 +122,8 @@ u.add(v); // u = {5.0, 7.0, 9.0}
 Subtracts two vectors or matrices element-wise. Modifies the object in-place.
 
 ```cpp
-void    Vector::sub(const Vector &v);
-void    Matrix::sub(const Matrix &m);
+void    Vector<K>::sub(const Vector &v);
+void    Matrix<K>::sub(const Matrix &m);
 ```
 
 | | Vector | Matrix |
@@ -142,8 +144,8 @@ u.sub(v); // u = {-3.0, -3.0, -3.0}
 Multiplies every element by a scalar. Modifies the object in-place.
 
 ```cpp
-void    Vector::scl(const K &a);
-void    Matrix::scl(const K &a);
+void    Vector<K>::scl(const K &a);
+void    Matrix<K>::scl(const K &a);
 ```
 
 | | Vector | Matrix |
@@ -295,8 +297,8 @@ A_Y + (B_y - A_y) {\times t}
 Returns the sum of the element-wise products of two vectors using `fma` for precision.
 
 ```cpp
-K   dot(Vector<K> &v);
-K   dot(const Vector<K> &v) const;
+K   Vector<K>::dot(Vector<K> &v);
+K   Vector<K>::dot(const Vector<K> &v) const;
 ```
 
 | Overload | Time complexity | Space complexity |
@@ -339,13 +341,13 @@ A_x {\cdot B_x} + A_y {\cdot B_y} + A_z {\cdot B_z}
 Returns different kinds of norms of a vector.
 
 ```cpp
-float   norm_1(void);
-float   norm(void);
-float   norm_inf(void);
+float   Vector<K>::norm_1(void);
+float   Vector<K>::norm(void);
+float   Vector<K>::norm_inf(void);
 
-float   norm_1(void) const;
-float   norm(void) const;
-float   norm_inf(void) const;
+float   Vector<K>::norm_1(void) const;
+float   Vector<K>::norm(void) const;
+float   Vector<K>::norm_inf(void) const;
 ```
 
 | Overload | Time complexity | Space complexity |
@@ -488,10 +490,10 @@ u_1v_2 - u_2v_1
 Returns the product of a matrix with a vector or another matrix.
 
 ```cpp
-Vector<K>	mul_vec(std::initializer_list<K> vec);
-Vector<K>	mul_vec(Vector<K> vec);
+Vector<K>	Matrix<K>::mul_vec(std::initializer_list<K> vec);
+Vector<K>	Matrix<K>::mul_vec(Vector<K> vec);
 
-Matrix<K>	mul_mat(Matrix<K> mat);
+Matrix<K>	Matrix<K>::mul_mat(Matrix<K> mat);
 ```
 
 | Overload | Time complexity | Space complexity |
@@ -503,8 +505,8 @@ Matrix<K>	mul_mat(Matrix<K> mat);
 > For `mul_mat`: A ∈ R^(m×n), B ∈ R^(n×p) => result ∈ R^(m×p)
 
 ```cpp
-Matrix<double> m1({{1., 0.}, {0., 1.}});
-Matrix<double> m2({{2., 1.}, {4., 2.}});
+Matrix<double>	m1({{1., 0.}, {0., 1.}});
+Matrix<double>	m2({{2., 1.}, {4., 2.}});
 
 m1.mul_vec({4., 2.});		// [4., 2.]
 m1.mul_vec({4., 2.});		// [4., 2.]
@@ -576,8 +578,30 @@ If A is a matrix of dimension n × p and B is a matrix of dimension p × m,
 the product of A by B, denoted A × B or AB, is a matrix of dimension n × m
 whose coefficient at row i and column j is obtained by multiplying the i-th row of A by the j-th column of B.
 
+### TRACE
+Returns the trace of a square matrix.
+
+```cpp
+K	Matrix<K>::trace(void);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| trace | O(n) | O(1) |
+
+```cpp
+Matrix<double>	m1({{1., 0.}, {0., 1.}});
+Matrix<double>	m2({{-2, -8, 4}, {1, -23, 4}, {0, 6, 4}});
+
+m1.trace();		// 2
+m2.trace();		//-21
+```
+
+The trace of a matrix is only defined for square matrices and is the sum of all diagonal values.
+
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
 - Compute Cos of two vectors https://www.youtube.com/watch?v=2pIlGSu6Ta4
 - Compute Cross Product https://www.khanacademy.org/math/multivariable-calculus/thinking-about-multivariable-function/x786f2022:vectors-and-matrices/a/cross-products-mvc
 - Compute the product between two Matrix https://youtu.be/OC90E-fnQ7g
+- Compute the Trace of a Matrix https://youtu.be/OuDA54fWk2o
