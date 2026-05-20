@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:27:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 13:15:50 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 14:13:52 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ void	cosineTester(void);
 
 // ex06
 void	cross_productTester(void);
+
+// ex07
+void	matrix_multiplicationTester(void);
 
 #endif //TESTER_HPP

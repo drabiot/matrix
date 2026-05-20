@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 21:51:43 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 14:11:57 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MATRIX_HPP
 
 # include "utils.hpp"
+# include "Vector.hpp"
 
 template<typename K>
 class	Matrix {
@@ -41,14 +42,20 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const Matrix<U>& m);
 
 	//Functions
-	void	add(const Matrix<K>	&m);
-	void	sub(const Matrix<K>	&m);
-	void	scl(K a);
+	void		add(const Matrix<K>	&m);
+	void		sub(const Matrix<K>	&m);
+	void		scl(K a);
+
+	Vector<K>	mul_vec(std::initializer_list<K> vec);
+	Vector<K>	mul_vec(Vector<K> vec);
+	Matrix<K>	mul_vec(Matrix<K> mat);
 };
 
 # include "../../src/Functions/Matrix/Add.tpp"
 # include "../../src/Functions/Matrix/Substract.tpp"
 # include "../../src/Functions/Matrix/Scale.tpp"
+
+# include "../../src/Functions/Matrix/Matrix_Multiplication.tpp"
 
 # include "../../src/Core/Matrix.tpp"
 
