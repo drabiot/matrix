@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Substract.tpp                                      :+:      :+:    :+:   */
+/*   Trace.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 18:11:43 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 15:44:24 by tchartie         ###   ########.fr       */
+/*   Created: 2026/05/20 15:43:43 by tchartie          #+#    #+#             */
+/*   Updated: 2026/05/20 15:51:11 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Time complexity:  O(n) where n = rows * cols
-// Space complexity: O(1)
 template<typename K>
-void	Matrix<K>::sub(const Matrix<K>	&m) {
+K	Matrix<K>::trace() {
+	K	result = 0;
 	for (size_t i = 0; i < this->_rows; ++i) {
 		for (size_t j = 0; j < this->_cols; ++j)
-			this->_content[i][j] = this->_content[i][j] - m._content[i][j];
+			if (i == j)
+				result += this->_content[i][j];
 	}
+	return (result);
 }

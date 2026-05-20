@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 14:58:41 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 15:43:10 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ public:
 	Vector<K>	mul_vec(std::initializer_list<K> vec);
 	Vector<K>	mul_vec(Vector<K> vec);
 	Matrix<K>	mul_mat(Matrix<K> mat);
+
+	K			trace(void);
 };
 
 # include "../../src/Functions/Matrix/Add.tpp"
@@ -56,6 +58,8 @@ public:
 # include "../../src/Functions/Matrix/Scale.tpp"
 
 # include "../../src/Functions/Matrix/Matrix_Multiplication.tpp"
+
+# include "../../src/Functions/Matrix/Trace.tpp"
 
 # include "../../src/Core/Matrix.tpp"
 
