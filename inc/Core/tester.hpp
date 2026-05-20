@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:27:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 15:48:00 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 16:27:59 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,8 @@ void	matrix_multiplicationTester(void);
 
 // ex08
 void	traceTester(void);
+
+// ex09
+void	transposeTester(void);
 
 #endif //TESTER_HPP

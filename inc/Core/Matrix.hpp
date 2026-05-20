@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 15:43:10 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/20 16:23:43 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ public:
 	Matrix<K>	mul_mat(Matrix<K> mat);
 
 	K			trace(void);
+
+	Matrix<K>	transpose(void);
 };
 
 # include "../../src/Functions/Matrix/Add.tpp"
@@ -60,6 +62,8 @@ public:
 # include "../../src/Functions/Matrix/Matrix_Multiplication.tpp"
 
 # include "../../src/Functions/Matrix/Trace.tpp"
+
+# include "../../src/Functions/Matrix/Transpose.tpp"
 
 # include "../../src/Core/Matrix.tpp"
 
