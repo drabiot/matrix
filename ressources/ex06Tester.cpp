@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 13:14:57 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 13:27:27 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/21 17:38:27 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,17 @@ void	cross_productTester() {
 
 	PRINT MAGENTA "Cross Product between Fourth vector and Fifth vector" CENDL;
 	PRINT YELLOW AND cross_product(e, f) CENDL;
+	NLINE;
+
+	PRINT RED " Few value Test " CENDL;
+
+	PRINT MAGENTA "Cross Product between Second vector and Third vector" CENDL;
+	PRINT YELLOW AND cross_product({1, 2}, {4, 5}) CENDL;
+	NLINE;
+
+	PRINT RED " Too many value Test " CENDL;
+
+	PRINT MAGENTA "Cross Product between Second vector and Third vector" CENDL;
+	PRINT YELLOW AND cross_product({1, 2, 3, 4}, {5, 6, 7, 8}) CENDL;
 	NLINE;
 }
