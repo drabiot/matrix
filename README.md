@@ -651,7 +651,7 @@ Matrix<double>	m3({{-2, -8, 4}, {1, -23, 4}});
 m1.transpose();		// [1., 0.]
 					// [0., 1.]
 
-m2.transpose();		// [-2.,  1.,  0,]
+m2.transpose();		// [-2.,  1.,  0.]
 					// [-8., -23., 6.]
 					// [4.,   4.,  4.]
 
@@ -696,6 +696,32 @@ A^T =
 ```
 
 ### ROW-ECHELON FORM
+Returns the row-echelon form of a matrix.
+
+```cpp
+Matrix<K>	Matrix<K>::row_echelon(void);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| row_echelon | O(n*m²) | O(n*m) |
+
+```cpp
+Matrix<double>	m1({{1., 0.}, {0., 1.}});
+Matrix<double>	m2({{2, 3, 4}, {4, 6, 8}, {1, 3, 1}});
+Matrix<double>	m3({{8, 5, -2, 4, 28}, {4, 2.5, 20, 4, -4}, {8, 5, 1, 4, 17}});
+
+m1.row_echelon();	// [1., 0.]
+					// [0., 1.]
+
+m2.row_echelon();	// [1., 0.,     3.]
+					// [0., 1., -0.67.]
+					// [0., 0.,     0.]
+
+m3.row_echelon();	// [1., 0.628, 0., 0., -12.167]
+					// [0.,  0.,   1., 0.,  -3.667]
+					// [0.,  0.,   0., 1.,    29.5]
+```
 
 To be in row-echelon form, a matrix must have the following properties:
 
@@ -707,35 +733,80 @@ To be in row-echelon form, a matrix must have the following properties:
 
 Every matrix can be transform into row echelon form by a sequence of elementary row operations, a process called Gaussian elimination.
 
+The algorithm works column by column, maintaining a `pivot_row` that advances only when a pivot is found:
+
+**Step 1 : Find a non-zero pivot in the current column and swap it to `pivot_row`**
+
 ```math
-A =
 \begin{bmatrix}
 2 & 3 & 4 \\
 4 & 6 & 8 \\
 1 & 3 & 1
 \end{bmatrix}
-\xrightarrow{R_2 = R_2 - 2R_1}
+\xrightarrow{R_0 \leftrightarrow R_0}{}
 \begin{bmatrix}
 2 & 3 & 4 \\
-0 & 0 & 0 \\
+4 & 6 & 8 \\
 1 & 3 & 1
 \end{bmatrix}
-\xrightarrow[R_2 \leftrightarrow R_3]{R_1 = R_1 - 2R_3}
+```
+
+**Step 2 : Normalize `pivot_row` so the pivot equals 1**
+
+```math
 \begin{bmatrix}
-0 & -3 & 2 \\
-1 & 3 & 1 \\
+2 & 3 & 4 \\
+4 & 6 & 8 \\
+1 & 3 & 1
+\end{bmatrix}
+\xrightarrow{R_0 = \frac{1}{2}R_0}
+\begin{bmatrix}
+1 & \frac{3}{2} & 2 \\
+4 & 6 & 8 \\
+1 & 3 & 1
+\end{bmatrix}
+```
+
+**Step 3 : Eliminate all other rows in that column**
+
+```math
+\begin{bmatrix}
+1 & \frac{3}{2} & 2 \\
+4 & 6 & 8 \\
+1 & 3 & 1
+\end{bmatrix}
+\xrightarrow[R_2 = R_2 - 1 \cdot R_0]{R_1 = R_1 - 4 \cdot R_0}
+\begin{bmatrix}
+1 & \frac{3}{2} & 2 \\
+0 & 0 & 0 \\
+0 & \frac{3}{2} & -1
+\end{bmatrix}
+```
+
+**Column 1** $A_{11} = 0$, swap with first non-zero below. Normalize $R_1$, then eliminate $R_0$:
+
+```math
+\begin{bmatrix}
+1 & \frac{3}{2} & 2 \\
+0 & 0 & 0 \\
+0 & \frac{3}{2} & -1
+\end{bmatrix}
+\xrightarrow{R_1 \leftrightarrow R_2}{}
+\begin{bmatrix}
+1 & \frac{3}{2} & 2 \\
+0 & \frac{3}{2} & -1 \\
 0 & 0 & 0
 \end{bmatrix}
-\xrightarrow[R_1 \leftrightarrow R_2]{}
+\xrightarrow{R_1 = \frac{2}{3}R_1}
 \begin{bmatrix}
-1 & 3 & 1 \\
-0 & -3 & 2 \\
+1 & \frac{3}{2} & 2 \\
+0 & 1 & -\frac{2}{3} \\
 0 & 0 & 0
 \end{bmatrix}
-\xrightarrow{R_2 = -\frac{1}{3}R_2}
+\xrightarrow{R_0 = R_0 - \frac{3}{2}R_1}
 \begin{bmatrix}
-1 & 3 & 1 \\
-0 & 1 & \frac{-2}{3} \\
+1 & 0 & 3 \\
+0 & 1 & -\frac{2}{3} \\
 0 & 0 & 0
 \end{bmatrix}
 ```
