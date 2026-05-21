@@ -30,6 +30,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Trace](#trace)
   - [Transpose](#transpose)
   - [Row-Echelon Form](#row-echelon-form)
+  - [Determinant](#determinant)
 - [Sources](#sources)
 
 
@@ -97,6 +98,7 @@ Open the project
 | Trace | Returns the Trace of the Square Matrix |
 | Transpose | Returns the Transpose of a Matrix |
 | Row-Echelon Form | Returns the Row-Echelon Form of the Matrix |
+| Determinant | Returns the Deterninant of the Matrix |
 
 ## Documentation
 
@@ -811,6 +813,187 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 \end{bmatrix}
 ```
 
+### DETERMINANT
+Returns the determinant of a matrix.
+
+```cpp
+Matrix<K>	Matrix<K>::determinant(void);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| determinant | O(n*m²) | O(n*m) |
+
+```cpp
+Matrix<double>	m1({{1., 0.}, {0., 1.}});
+Matrix<double>	m2({{2, 0, 0}, {0, 2, 0}, {0, 0, 2}});
+Matrix<double>	m3({{8, 5, -2}, {4, 7, 20}, {7, 6, 1}});
+Matrix<double>	m4({{8, 5, -2, 4}, {4, 2.5, 20, 4}, {8, 5, 1, 4}, {28, -4, 17, 1}});
+
+m1.determinant();	// 0.0
+m2.determinant();	// 8.0
+m3.determinant();	// -174.0
+m4.determinant();	// 1032.0
+```
+
+```math
+A = 
+\begin{bmatrix}
+a & b & c & d \\
+e & f & g & h \\
+i & j & k & l \\
+m & n & o & p
+\end{bmatrix}
+```
+
+To determine how to compute the determinan of a given matrix we need to remember the sign behaviour
+
+```math 
+\begin{bmatrix}
++ & - & + & \cdots \\
+- & + &  &  \\
++ &  & \ddots &  \\
+\vdots &  &  & \ddots 
+\end{bmatrix}
+```
+
+And to determine a 2×2 matrix we only need to do
+
+```math
+A =
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+```
+
+```math
+det(A) = ad - bc
+```
+
+To compute the determinant, take a row or a column and iterate through it. For each value, eliminate every other value sharing its row or column.
+
+```math
+det(A) =
++ a
+\begin{bmatrix}
+f & g & h \\
+j & k & l \\
+n & o & p
+\end{bmatrix}
+- b
+\begin{bmatrix}
+e & g & h \\
+i & k & l \\
+m & o & p
+\end{bmatrix}
++ c
+\begin{bmatrix}
+e & f & h \\
+i & j & l \\
+m & n & p
+\end{bmatrix}
+- d
+\begin{bmatrix}
+e & f & g \\
+i & j & k \\
+m & n & o
+\end{bmatrix}
+```
+
+Until only 2×2 matrix remains.
+
+```math
+det(A) = +a (
++ f
+\begin{bmatrix}
+k & l \\
+o & p
+\end{bmatrix}
+- g
+\begin{bmatrix}
+j & l \\
+n & p
+\end{bmatrix}
++ h
+\begin{bmatrix}
+j & k \\
+n & o
+\end{bmatrix}
+)
+- b (
++ e
+\begin{bmatrix}
+k & l \\
+o & p
+\end{bmatrix}
+- g
+\begin{bmatrix}
+i & l \\
+m & p
+\end{bmatrix}
++ h
+\begin{bmatrix}
+i & k \\
+m & o
+\end{bmatrix}
+)
+\cdots
+```
+
+```math
+det(A) = +a(+f(kp - lo) -g(jp - ln) +h(jo - kn)) -b(+e(kp - lo) -g(ip - lm) +h(io - km)) \cdots
+```
+
+**Example with a 3×3 matrix:**
+
+```math
+A = 
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+```
+```math
+det(A) =
+1
+\begin{bmatrix}
+5 & 6 \\
+8 & 9
+\end{bmatrix}
+-2
+\begin{bmatrix}
+4 & 6 \\
+7 & 9
+\end{bmatrix}
++ 3
+\begin{bmatrix}
+4 & 5 \\
+7 & 8
+\end{bmatrix}
+```
+```math
+det(A) =
+1 \times{(5 \times{9} - 6 \times{8})} - 2 \times{(4 \times{9} - 6 \times{7})} + 3 \times{(4 \times{8} - 5 \times{7})}
+```
+```math
+det(A) =
+1 \times{(45 - 48)} - 2 \times{(36 - 42)} + 3 \times{(32 - 35)}
+```
+```math
+det(A) =
+1 \times{-3} - 2 \times{-6} + 3 \times{-3}
+```
+```math
+det(A) =
+- 3 + 12 - 9
+```
+```math
+det(A) = 0
+```
+
+
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
 - Compute Cos of two vectors https://www.youtube.com/watch?v=2pIlGSu6Ta4
@@ -820,3 +1003,4 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 - Transpose a Matrix https://youtu.be/jG9Swa-wCwg
 - Better understand Row-Echelon Form Matrix & how to Transform a Matrix into one https://youtu.be/oXMPQ-6YnGA
 - Gaussian Elimination algorythm & explication https://fr.wikipedia.org/wiki/%C3%89limination_de_Gauss-Jordan
+- Find the Determinant of a Matrix https://youtu.be/CcbyMH3Noow
