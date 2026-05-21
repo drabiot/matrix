@@ -945,6 +945,9 @@ m & o
 det(A) = +a(+f(kp - lo) -g(jp - ln) +h(jo - kn)) -b(+e(kp - lo) -g(ip - lm) +h(io - km)) \cdots
 ```
 
+The determinant represents how a linear transformation scales volumes in space.
+If the determinant equals 0, the transformation collapses the space onto a lower dimension. A plane becomes a line, or a line becomes a point.
+
 **Example with a 3×3 matrix:**
 
 ```math
