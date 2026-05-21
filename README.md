@@ -846,7 +846,7 @@ m & n & o & p
 \end{bmatrix}
 ```
 
-To determine how to compute the determinan of a given matrix we need to remember the sign behaviour
+To determine how to compute the determinant of a given matrix we need to remember the sign behaviour:
 
 ```math 
 \begin{bmatrix}
@@ -857,7 +857,7 @@ To determine how to compute the determinan of a given matrix we need to remember
 \end{bmatrix}
 ```
 
-And to determine a 2×2 matrix we only need to do
+And to determine a 2×2 matrix we only need to do:
 
 ```math
 A =
