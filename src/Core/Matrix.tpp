@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 20:41:16 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/18 21:52:09 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/21 18:24:41 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,13 @@ Matrix<K>::~Matrix() {
 }
 
 template<typename K>
+bool	Matrix<K>::isSquare(void) {
+	if (this->_rows == this->_cols)
+		return (true);
+	return (false);
+}
+
+template<typename K>
 size_t	Matrix<K>::getRows(void) const {
 	return (this->_rows);
 }
@@ -95,6 +102,11 @@ size_t	Matrix<K>::getRows(void) const {
 template<typename K>
 size_t	Matrix<K>::getCols(void) const {
 	return (this->_cols);
+}
+
+template<typename K>
+K**	Matrix<K>::getContent(void) const {
+	return (this->_content);
 }
 
 template<typename K>

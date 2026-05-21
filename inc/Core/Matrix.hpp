@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 17:28:23 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/21 18:24:48 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ public:
 	//Utils
 	size_t		getRows(void) const;
 	size_t		getCols(void) const;
+	K**			getContent(void) const;
+	bool		isSquare(void);
 	K*			operator[](size_t i);
 	const K*	operator[](size_t i) const;
 
@@ -51,10 +53,9 @@ public:
 	Matrix<K>	mul_mat(Matrix<K> mat);
 
 	K			trace(void);
-
 	Matrix<K>	transpose(void);
-
 	Matrix<K>	row_echelon(void);
+	K			determinant(void);
 };
 
 # include "../../src/Functions/Matrix/Add.tpp"
@@ -68,6 +69,8 @@ public:
 # include "../../src/Functions/Matrix/Transpose.tpp"
 
 # include "../../src/Functions/Matrix/Row_Echelon_Form.tpp"
+
+# include "../../src/Functions/Matrix/Determinant.tpp"
 
 # include "../../src/Core/Matrix.tpp"
 

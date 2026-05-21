@@ -822,7 +822,7 @@ Matrix<K>	Matrix<K>::determinant(void);
 
 | Overload | Time complexity | Space complexity |
 |---|---|---|
-| determinant | O(n*m²) | O(n*m) |
+| determinant | O(nn³) | O(nn²) |
 
 ```cpp
 Matrix<double>	m1({{1., 0.}, {0., 1.}});
