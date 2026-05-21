@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 18:04:26 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 18:38:22 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/21 19:45:17 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static Matrix<K>	submatrix(Matrix<K> mat, size_t skip_row, size_t skip_col) {
 template<typename K>
 K Matrix<K>::determinant() {
 	if (!this->isSquare())
-		return (0);
+		throw std::invalid_argument("Matrix must be square to compute determinant");
 
 	if (this->_cols == 1)
 		return (this->_content[0][0]);

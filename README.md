@@ -1007,3 +1007,5 @@ det(A) = 0
 - Better understand Row-Echelon Form Matrix & how to Transform a Matrix into one https://youtu.be/oXMPQ-6YnGA
 - Gaussian Elimination algorythm & explication https://fr.wikipedia.org/wiki/%C3%89limination_de_Gauss-Jordan
 - Find the Determinant of a Matrix https://youtu.be/CcbyMH3Noow
+- Create the Inverse Matrix https://youtu.be/kWorj5BBy9k
+- Singular Matrix https://www.datacamp.com/fr/tutorial/singular-matrix

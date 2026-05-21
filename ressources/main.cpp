@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 18:15:01 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/21 19:48:09 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,64 +25,68 @@ int	main(int argc, char **argv) {
 		return (0);
 	}
 
-	if (all || (argc > 1 && str(argv[1]) == "add")) {
-		PRINT WHITE " --ADD TESTER-- " CENDL;
-		addTesterVector();
-		addTesterMatrix();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "sub")) {
-		PRINT WHITE " --SUBTRACT TESTER-- " CENDL;
-		subTesterVector();
-		subTesterMatrix();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "scl")) {
-		PRINT WHITE " --SCALE TESTER-- " CENDL;
-		sclTesterVector();
-		sclTesterMatrix();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "linear_combination")) {
-		PRINT WHITE " --LINEAR COMBINATION TESTER-- " CENDL;
-		linear_combinationTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "linear_interpolation")) {
-		PRINT WHITE " --LINEAR INTERPOLATION TESTER-- " CENDL;
-		linear_interpolationTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "dot_product")) {
-		PRINT WHITE " --DOT PRODUCT TESTER-- " CENDL;
-		dot_productTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "norm")) {
-		PRINT WHITE " --NORM TESTER-- " CENDL;
-		normTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "cosine")) {
-		PRINT WHITE " --COSINE TESTER-- " CENDL;
-		cosineTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "cross_product")) {
-		PRINT WHITE " --CROSS PRODUCT TESTER-- " CENDL;
-		cross_productTester();
-	}
-	if (all || (argc > 1 && (str(argv[1]) == "matrix_multiplication" || str(argv[1]) == "linear_map"))) {
-		PRINT WHITE " --MATRIX MULTIPLICATION TESTER-- " CENDL;
-		matrix_multiplicationTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "trace")) {
-		PRINT WHITE " --TRACE TESTER-- " CENDL;
-		traceTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "transpose")) {
-		PRINT WHITE " --TRANSPOSE TESTER-- " CENDL;
-		transposeTester();
-	}
-	if (all || (argc > 1 && (str(argv[1]) == "row-echelon_form" || str(argv[1]) == "row_echelon_form"))) {
-		PRINT WHITE " --ROW ECHELON FORM TESTER-- " CENDL;
-		row_echelon_formTester();
-	}
-	if (all || (argc > 1 && str(argv[1]) == "determinant")) {
-		PRINT WHITE " --DETERMINANT TESTER-- " CENDL;
-		determinantTester();
+	try {
+		if (all || (argc > 1 && str(argv[1]) == "add")) {
+			PRINT WHITE " --ADD TESTER-- " CENDL;
+			addTesterVector();
+			addTesterMatrix();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "sub")) {
+			PRINT WHITE " --SUBTRACT TESTER-- " CENDL;
+			subTesterVector();
+			subTesterMatrix();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "scl")) {
+			PRINT WHITE " --SCALE TESTER-- " CENDL;
+			sclTesterVector();
+			sclTesterMatrix();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "linear_combination")) {
+			PRINT WHITE " --LINEAR COMBINATION TESTER-- " CENDL;
+			linear_combinationTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "linear_interpolation")) {
+			PRINT WHITE " --LINEAR INTERPOLATION TESTER-- " CENDL;
+			linear_interpolationTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "dot_product")) {
+			PRINT WHITE " --DOT PRODUCT TESTER-- " CENDL;
+			dot_productTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "norm")) {
+			PRINT WHITE " --NORM TESTER-- " CENDL;
+			normTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "cosine")) {
+			PRINT WHITE " --COSINE TESTER-- " CENDL;
+			cosineTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "cross_product")) {
+			PRINT WHITE " --CROSS PRODUCT TESTER-- " CENDL;
+			cross_productTester();
+		}
+		if (all || (argc > 1 && (str(argv[1]) == "matrix_multiplication" || str(argv[1]) == "linear_map"))) {
+			PRINT WHITE " --MATRIX MULTIPLICATION TESTER-- " CENDL;
+			matrix_multiplicationTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "trace")) {
+			PRINT WHITE " --TRACE TESTER-- " CENDL;
+			traceTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "transpose")) {
+			PRINT WHITE " --TRANSPOSE TESTER-- " CENDL;
+			transposeTester();
+		}
+		if (all || (argc > 1 && (str(argv[1]) == "row-echelon_form" || str(argv[1]) == "row_echelon_form"))) {
+			PRINT WHITE " --ROW ECHELON FORM TESTER-- " CENDL;
+			row_echelon_formTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "determinant")) {
+			PRINT WHITE " --DETERMINANT TESTER-- " CENDL;
+			determinantTester();
+		}
+	} catch (const std::exception &e) {
+		ERROR RED AND e.what() CENDL;
 	}
 	return (0);
 }
