@@ -733,11 +733,13 @@ To be in row-echelon form, a matrix must have the following properties:
 
 3. In any two successice rows that do no consist entirely of zeros, the leading 1 in the lower row occurs farther to the right than the leading 1 in the higher row.
 
-Every matrix can be transform into row echelon form by a sequence of elementary row operations, a process called Gaussian elimination.
+Every matrix can be transformed into **reduced row echelon form (RREF)** through a sequence of elementary row operations, a process called **Gauss-Jordan elimination**.
 
-The algorithm works column by column, maintaining a `pivot_row` that advances only when a pivot is found:
+The algorithm works column by column, maintaining a `pivot_row` counter that advances only when a valid pivot is found.
 
-**Step 1 : Find a non-zero pivot in the current column and swap it to `pivot_row`**
+### Step 1: Find a non-zero pivot and move it into position
+
+Scan downward from `pivot_row` in the current column. If a non-zero entry is found, swap that row with `pivot_row`. If the column is all zeros, skip it, no pivot exists here, `pivot_row` stays unchanged.
 
 ```math
 \begin{bmatrix}
@@ -745,7 +747,7 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 4 & 6 & 8 \\
 1 & 3 & 1
 \end{bmatrix}
-\xrightarrow{R_0 \leftrightarrow R_0}{}
+\xrightarrow{R_0 \leftrightarrow R_0}
 \begin{bmatrix}
 2 & 3 & 4 \\
 4 & 6 & 8 \\
@@ -753,7 +755,12 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 \end{bmatrix}
 ```
 
-**Step 2 : Normalize `pivot_row` so the pivot equals 1**
+Here the pivot is already in place (2 ≠ 0), so no swap is needed.
+
+
+### Step 2: Normalize `pivot_row` so the pivot equals 1
+
+Divide every entry in `pivot_row` by the pivot value. This guarantees a leading 1, which is required for RREF.
 
 ```math
 \begin{bmatrix}
@@ -769,7 +776,13 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 \end{bmatrix}
 ```
 
-**Step 3 : Eliminate all other rows in that column**
+### Step 3: Eliminate every other entry in that column
+
+For each row `i ≠ pivot_row`, subtract the right multiple of `pivot_row` to zero out `A[i][col]` :
+
+```math
+R_i \leftarrow R_i - A[i][\text{col}] \times R_{\text{pivot}}
+```
 
 ```math
 \begin{bmatrix}
@@ -781,11 +794,16 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 \begin{bmatrix}
 1 & \frac{3}{2} & 2 \\
 0 & 0 & 0 \\
-0 & \frac{3}{2} & -1
-\end{bmatrix}
+0 & \frac{3}{2} & -1 \end{bmatrix}
 ```
 
-**Column 1** $A_{11} = 0$, swap with first non-zero below. Normalize $R_1$, then eliminate $R_0$:
+Column 0 is done. `pivot_row` advances to 1.
+
+---
+
+### Column 1: the pivot slot is zero, swap with the first non-zero below
+
+`A[1][1] = 0` so we scan downward and swap with R2 :
 
 ```math
 \begin{bmatrix}
@@ -793,18 +811,28 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 0 & 0 & 0 \\
 0 & \frac{3}{2} & -1
 \end{bmatrix}
-\xrightarrow{R_1 \leftrightarrow R_2}{}
+\xrightarrow{R_1 \leftrightarrow R_2}
 \begin{bmatrix}
 1 & \frac{3}{2} & 2 \\
 0 & \frac{3}{2} & -1 \\
 0 & 0 & 0
 \end{bmatrix}
+```
+
+Normalize R1 :
+
+```math
 \xrightarrow{R_1 = \frac{2}{3}R_1}
 \begin{bmatrix}
 1 & \frac{3}{2} & 2 \\
 0 & 1 & -\frac{2}{3} \\
 0 & 0 & 0
 \end{bmatrix}
+```
+
+Eliminate upward into R0 (RREF requires zeros **above** the pivot too) :
+
+```math
 \xrightarrow{R_0 = R_0 - \frac{3}{2}R_1}
 \begin{bmatrix}
 1 & 0 & 3 \\
@@ -812,6 +840,8 @@ The algorithm works column by column, maintaining a `pivot_row` that advances on
 0 & 0 & 0
 \end{bmatrix}
 ```
+
+Column 1 is done. `pivot_row` advances to 2. No more non-zero entries remain — the matrix is in **RREF**.
 
 ### DETERMINANT
 Returns the determinant of a matrix.
