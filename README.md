@@ -32,6 +32,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Row-Echelon Form](#row-echelon-form)
   - [Determinant](#determinant)
   - [Inverse](#inverse)
+  - [Rank](#rank)
 - [Sources](#sources)
 
 
@@ -101,6 +102,7 @@ Open the project
 | Row-Echelon Form | Returns the Row-Echelon Form of the Matrix |
 | Determinant | Returns the Deterninant of the Matrix |
 | Inverse | Returns the Inverse Matrix of a Matrix if it's possible |
+| Rank | Returns the Rank of a Matrix |
 
 ## Documentation
 
@@ -1258,7 +1260,7 @@ A^{-1} =
 ---
 
 ### RANK
-Returns the rankof a Matrix.
+Returns the rank of a matrix.
 
 ```cpp
 size_t	Matrix<K>::rank(void);
