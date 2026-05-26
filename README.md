@@ -227,6 +227,8 @@ auto res = linear_combination({v1, v2, v3}, {10.0, -2.0, 0.5}); // res = [10.0, 
 \end{bmatrix}
 ```
 
+---
+
 ### LINEAR INTERPOLATION
 Returns the linear interpolation between two values using `fma` for precision.
 
@@ -302,6 +304,8 @@ A_Y + (B_y - A_y) {\times t}
 \end{bmatrix}
 ```
 
+---
+
 ### DOT PRODUCT
 Returns the sum of the element-wise products of two vectors using `fma` for precision.
 
@@ -345,6 +349,8 @@ B_z
 \mathbin{=}
 A_x {\cdot B_x} + A_y {\cdot B_y} + A_z {\cdot B_z}
 ```
+
+---
 
 ### NORM
 Returns different kinds of norms of a vector.
@@ -407,6 +413,8 @@ u.norm_inf();	// 2.0
 ```
 </div>
 
+---
+
 ### COSINE
 Returns the cosine of the angle between two vectors.
 
@@ -440,6 +448,8 @@ cos(\vec{u}, \vec{v}) = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\|_2 \times{\|\vec
 ```
 
 So we use [Dot Product](#dot-product) & [Norm](#norm) to compute our cosine
+
+---
 
 ### CROSS PRODUCT
 Returns the cross product of two 3D vectors.
@@ -494,6 +504,8 @@ u_3v_1 - u_1v_3 \\
 u_1v_2 - u_2v_1
 \end{bmatrix}
 ```
+
+---
 
 ### MATRIX MULTIPLICATION
 Returns the product of a matrix with a vector or another matrix.
@@ -594,6 +606,8 @@ If A is a matrix of dimension n × p and B is a matrix of dimension p × m,
 the product of A by B, denoted A × B or AB, is a matrix of dimension n × m
 whose coefficient at row i and column j is obtained by multiplying the i-th row of A by the j-th column of B.
 
+---
+
 ### TRACE
 Returns the trace of a square matrix.
 
@@ -635,6 +649,8 @@ A =
 \Rightarrow
 -2 + -23 + 4 = -21
 ```
+
+---
 
 ### TRANSPOSE
 Returns the transpose of a matrix.
@@ -698,6 +714,8 @@ A^T =
 4 & 4 & 4
 \end{bmatrix}
 ```
+
+---
 
 ### ROW-ECHELON FORM
 Returns the row-echelon form of a matrix.
@@ -844,6 +862,8 @@ Eliminate upward into R0 (RREF requires zeros **above** the pivot too) :
 ```
 
 Column 1 is done. `pivot_row` advances to 2. No more non-zero entries remain — the matrix is in **RREF**.
+
+---
 
 ### DETERMINANT
 Returns the determinant of a matrix.
@@ -1028,6 +1048,8 @@ det(A) =
 det(A) = 0
 ```
 
+---
+
 ### INVERSE
 Returns the Inverse Matrix of a Matrix if it's possible.
 
@@ -1056,6 +1078,12 @@ m3.inverse();	// [ 0.64,  0.09, -0.65]
 				// [-0.78, -0.12,  0.96]
 				// [ 0.14,  0.07, -0.20]
 ```
+
+An n-by-n square matrix A is called invertible if there exists an n-by-n square matrix B such that:
+```math
+AB = BA = I_n
+```
+where I is an identity matrix.
 
 To compute the inverse of a matrix we need to apply the Gaussian Elimination to reduce our matrix to the identy matrix.
 
