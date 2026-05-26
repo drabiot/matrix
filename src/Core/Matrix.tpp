@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 20:41:16 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 18:24:41 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:27:23 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@ Matrix<K>::Matrix() : _rows(1), _cols(1) {
 	this->_content = new K*[_rows];
 	this->_content[0] = new K[_cols];
 	this->_content[0][0] = 0;
+}
+
+template<typename K>
+Matrix<K>::Matrix(size_t size) : _rows(size), _cols(size) {
+	this->_content = new K*[_rows];
+	for (size_t i = 0; i < this->_rows; ++i) {
+		this->_content[i] = new K[_cols];
+		for (size_t j = 0; j < this->_cols; ++j) {
+			i == j ? this->_content[i][j] = 1 : this->_content[i][j] = 0;
+		}
+	}
 }
 
 template<typename K>

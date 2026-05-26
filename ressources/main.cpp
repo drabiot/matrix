@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 19:48:09 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:30:03 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv) {
 		PRINT MAGENTA "If you want to test everything at once type " RED "./tester" MAGENTA " without argument" CENDL;
 		NLINE;
 		PRINT GREEN "If you want to one specific function type " YELLOW "./tester <name_of_your_function>" CENDL;
-		PRINT BLUE "Here all of the function:\n" CYAN "  - add\n  - sub\n  - scl\n  - linear_combination\n  - linear_interpolation\n  - dot_product\n  - cosine\n  - cross_product\n  - matrix_multiplication\n  - trace\n  - transpose\n  - row-echelon_form\n  - determinant" CENDL;
+		PRINT BLUE "Here all of the function:\n" CYAN "  - add\n  - sub\n  - scl\n  - linear_combination\n  - linear_interpolation\n  - dot_product\n  - cosine\n  - cross_product\n  - matrix_multiplication\n  - trace\n  - transpose\n  - row-echelon_form\n  - determinant\n  - inverse" CENDL;
 		return (0);
 	}
 
@@ -84,6 +84,10 @@ int	main(int argc, char **argv) {
 		if (all || (argc > 1 && str(argv[1]) == "determinant")) {
 			PRINT WHITE " --DETERMINANT TESTER-- " CENDL;
 			determinantTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "inverse")) {
+			PRINT WHITE " --INVERSE TESTER-- " CENDL;
+			inverseTester();
 		}
 	} catch (const std::exception &e) {
 		ERROR RED AND e.what() CENDL;

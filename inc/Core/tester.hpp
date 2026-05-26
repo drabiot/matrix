@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:27:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 18:16:03 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:30:14 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,8 @@ void	row_echelon_formTester(void);
 
 // ex11
 void	determinantTester(void);
+
+// ex12
+void	inverseTester(void);
 
 #endif //TESTER_HPP

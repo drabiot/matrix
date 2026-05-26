@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 18:24:48 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:27:38 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
 
 public:
 	Matrix(void);
+	Matrix(size_t size);
 	Matrix(size_t newRows, size_t newCols);
 	Matrix(K **newContent, size_t newRows, size_t newCols);
 	Matrix(const Matrix<K>& other);
@@ -56,6 +57,7 @@ public:
 	Matrix<K>	transpose(void);
 	Matrix<K>	row_echelon(void);
 	K			determinant(void);
+	Matrix<K>	inverse(void);
 };
 
 # include "../../src/Functions/Matrix/Add.tpp"
@@ -71,6 +73,8 @@ public:
 # include "../../src/Functions/Matrix/Row_Echelon_Form.tpp"
 
 # include "../../src/Functions/Matrix/Determinant.tpp"
+
+# include "../../src/Functions/Matrix/Inverse.tpp"
 
 # include "../../src/Core/Matrix.tpp"
 
