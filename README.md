@@ -1051,7 +1051,7 @@ det(A) = 0
 ---
 
 ### INVERSE
-Returns the Inverse Matrix of a Matrix if it's possible.
+Returns the inverse matrix of a given matrix if it's possible.
 
 ```cpp
 Matrix<K>	Matrix<K>::inverse(void);
@@ -1255,7 +1255,66 @@ A^{-1} =
 \end{bmatrix}
 ```
 
+---
 
+### RANK
+Returns the rankof a Matrix.
+
+```cpp
+size_t	Matrix<K>::rank(void);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| rank | O(n*m²) | O(n*m) |
+
+```cpp
+Matrix<double>	m1({{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}});
+Matrix<double>	m2({{1., 2., 0., 0.}, {2., 4., 0., 0.}, {-1., 2., 1., 1.}});
+Matrix<double>	m3({{8, 5, -2}, {4, 7, 20}, {7, 6, 1}, {21., 18., 7.}});
+
+m1.rank();	// 3
+m2.rank();	// 2
+m3.rank();	// 3
+```
+The rank is the number of dimensions in the output.
+
+To compute the rank of a matrix, you will need to transform your matrix in a Row-Echelon Form & return the sum of all the non-zero line.
+
+```math
+A =
+\begin{bmatrix}
+2 & -1 &  0 \\
+1 &  3 &  4 \\
+4 &  1 & -3
+\end{bmatrix}
+\xrightarrow{\text{Row-Echelon Form}}
+\begin{bmatrix}
+2 & -1 &  0 \\
+0 &  \frac{7}{2} &  4 \\
+0 &  0 & -\frac{45}{7}
+\end{bmatrix}
+\text{rank(A) = 3}
+```
+
+
+```math
+B =
+\begin{bmatrix}
+ 1 &  2 & 1 \\
+-2 & -3 & 1 \\
+ 3 &  5 & 0 \\
+ 2 &  4 & 2
+\end{bmatrix}
+\xrightarrow{\text{Row-Echelon Form}}
+\begin{bmatrix}
+1 & 2 & 1 \\
+0 & 1 & 3 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\text{rank(B) = 2}
+```
 
 
 ## Sources
@@ -1272,3 +1331,4 @@ A^{-1} =
 - Singular Matrix https://www.datacamp.com/fr/tutorial/singular-matrix
 - Inverse a matrix https://youtu.be/95dYWsZEXmM
 - Gaussian Elimination to create identity matrix https://youtu.be/PTii4TBh9kQ
+- Compute the rank of a matrix https://youtu.be/cSj82GG6MX4
