@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 17:28:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 16:04:53 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:55:27 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static K clean_zero(K val) {
 // Time complexity:  O(nm²)
 // Space complexity: O(nm)
 template<typename K>
-Matrix<K> Matrix<K>::row_echelon() {
+Matrix<K>	Matrix<K>::row_echelon() {
 	Matrix<K> result(this->_content, this->_rows, this->_cols);
 
 	size_t pivot_row = 0;

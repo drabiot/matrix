@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:27:32 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 14:30:14 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 16:03:40 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,8 @@ void	determinantTester(void);
 
 // ex12
 void	inverseTester(void);
+
+// ex13
+void	rankTester(void);
 
 #endif //TESTER_HPP

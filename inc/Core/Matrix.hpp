@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 14:27:38 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:58:03 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ public:
 	Matrix<K>	row_echelon(void);
 	K			determinant(void);
 	Matrix<K>	inverse(void);
+	size_t		rank(void);
 };
 
 # include "../../src/Functions/Matrix/Add.tpp"
@@ -75,6 +76,8 @@ public:
 # include "../../src/Functions/Matrix/Determinant.tpp"
 
 # include "../../src/Functions/Matrix/Inverse.tpp"
+
+# include "../../src/Functions/Matrix/Rank.tpp"
 
 # include "../../src/Core/Matrix.tpp"
 

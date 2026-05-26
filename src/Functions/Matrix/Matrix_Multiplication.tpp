@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:07:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 14:58:37 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:55:37 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // Time complexity:  O(nm) double loop i∈[0,m) j∈[0,n)
 // Space complexity: O(m)
 template<typename K>
-Vector<K> Matrix<K>::mul_vec(std::initializer_list<K> vec) {
+Vector<K>	Matrix<K>::mul_vec(std::initializer_list<K> vec) {
 	K result[this->_rows];
 
 	for (size_t i = 0; i < this->_rows; ++i) {

@@ -6,14 +6,14 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 14:22:15 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 14:58:01 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:55:44 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Time complexity:  O(n³)
 // Space complexity: O(n²)
 template<typename K>
-Matrix<K> Matrix<K>::inverse() {
+Matrix<K>	Matrix<K>::inverse() {
 	if (!this->isSquare())
 		throw std::invalid_argument("Matrix must be square to inverse the matrix");
 

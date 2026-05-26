@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 17:40:07 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 18:04:29 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/26 16:06:31 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	row_echelon_formTester() {
 	Matrix	<double>m3({{1, 2}, {2, 4}});
 	Matrix	<double>m4({{8, 5, -2, 4, 28}, {4, 2.5, 20, 4, -4}, {8, 5, 1, 4, 17}});
 	Matrix	<double>m5({{2.0, 3.0, 4.0}, {4.0, 6.0, 8.0}, {1.0, 3.0, 1.0}});
+	Matrix<double>	m6({{1., 2., 0., 0.}, {2., 4., 0., 0.}, {-1., 2., 1., 1.}});
 
 	PRINT MAGENTA "Fist Matrix:" CENDL;
 	PRINT m1;
@@ -43,5 +44,10 @@ void	row_echelon_formTester() {
 	PRINT m5;
 	PRINT BLUE "Row Echelon Form of the Fifth Matrix" CENDL;
 	PRINT CYAN AND m5.row_echelon() CENDL;
+	NLINE;
+	PRINT MAGENTA "Six Matrix:" CENDL;
+	PRINT m6;
+	PRINT BLUE "Row Echelon Form of the Six Matrix" CENDL;
+	PRINT CYAN AND m6.row_echelon() CENDL;
 	NLINE;
 }
