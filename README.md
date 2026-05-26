@@ -31,6 +31,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Transpose](#transpose)
   - [Row-Echelon Form](#row-echelon-form)
   - [Determinant](#determinant)
+  - [Inverse](#inverse)
 - [Sources](#sources)
 
 
@@ -99,6 +100,7 @@ Open the project
 | Transpose | Returns the Transpose of a Matrix |
 | Row-Echelon Form | Returns the Row-Echelon Form of the Matrix |
 | Determinant | Returns the Deterninant of the Matrix |
+| Inverse | Returns the Inverse Matrix of a Matrix if it's possible |
 
 ## Documentation
 
@@ -1026,6 +1028,207 @@ det(A) =
 det(A) = 0
 ```
 
+### INVERSE
+Returns the Inverse Matrix of a Matrix if it's possible.
+
+```cpp
+Matrix<K>	Matrix<K>::inverse(void);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| inverse | O(nn³) | O(nn²) |
+
+```cpp
+Matrix<double>	m1({{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}});
+Matrix<double>	m2({{2, 0, 0}, {0, 2, 0}, {0, 0, 2}});
+Matrix<double>	m3({{8, 5, -2}, {4, 7, 20}, {7, 6, 1}});
+
+m1.inverse();	// [1.0, 0.0, 0.0]
+				// [0.0, 1.0, 0.0]
+				// [0.0, 0.0, 1.0]
+
+m2.inverse();	// [0.5, 0.0, 0.0]
+				// [0.0, 0.5, 0.0]
+				// [0.0, 0.0, 0.5]
+
+m3.inverse();	// [ 0.64,  0.09, -0.65]
+				// [-0.78, -0.12,  0.96]
+				// [ 0.14,  0.07, -0.20]
+```
+
+To compute the inverse of a matrix we need to apply the Gaussian Elimination to reduce our matrix to the identy matrix.
+
+```math
+A = 
+\begin{bmatrix}
+0 & 2 & 3 & 5 \\
+2 & 4 & 4 & 2 \\
+0 & 1 & 2 & 4 \\
+3 & 7 & 9 & 11
+\end{bmatrix}
+```
+
+### Init: Create an augmented matrix
+
+```math
+\left[\begin{array}{cccc|cccc}
+0 & 2 & 3 & 5  & 1 & 0 & 0 & 0 \\
+2 & 4 & 4 & 2  & 0 & 1 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+3 & 7 & 9 & 11 & 0 & 0 & 0 & 1
+\end{array}\right]
+```
+
+### Step 1: Find a non-zero pivot and move it into position
+
+```math
+\left[\begin{array}{cccc|cccc}
+0 & 2 & 3 & 5  & 1 & 0 & 0 & 0 \\
+2 & 4 & 4 & 2  & 0 & 1 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+3 & 7 & 9 & 11 & 0 & 0 & 0 & 1
+\end{array}\right]
+\xrightarrow{R_1 \leftrightarrow R_2}
+\left[\begin{array}{cccc|cccc}
+2 & 4 & 4 & 2  & 0 & 1 & 0 & 0 \\
+0 & 2 & 3 & 5  & 1 & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+3 & 7 & 9 & 11 & 0 & 0 & 0 & 1
+\end{array}\right]
+```
+
+### Step 2: Create the pivot
+
+To create a pivot you need to divide every value of your pivot's line by the value of your pivot.
+
+```math
+\left[\begin{array}{cccc|cccc}
+2 & 4 & 4 & 2  & 0 & 1 & 0 & 0 \\
+0 & 2 & 3 & 5  & 1 & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+3 & 7 & 9 & 11 & 0 & 0 & 0 & 1
+\end{array}\right]
+\xrightarrow{R_1 \div{2}}
+\left[\begin{array}{cccc|cccc}
+1 & 2 & 2 & 1  & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 2 & 3 & 5  & 1 & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+3 & 7 & 9 & 11 & 0 & 0 & 0 & 1
+\end{array}\right]
+```
+
+### Step 3: Delete value that isn't 0 in your pivot column
+
+```math
+\left[\begin{array}{cccc|cccc}
+1 & 2 & 2 & 1  & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 2 & 3 & 5  & 1 & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+3 & 7 & 9 & 11 & 0 & 0 & 0 & 1
+\end{array}\right]
+\xrightarrow{R_3 = R_3 - 3R_1}
+\left[\begin{array}{cccc|cccc}
+1 & 2 & 2 & 1 & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 2 & 3 & 5 & 1 & 0 & 0 & 0 \\
+0 & 1 & 2 & 4 & 0 & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+```
+
+### Step 4: Repeat with your second pivot & more until it's finish
+
+```math
+\left[\begin{array}{cccc|cccc}
+1 & 2 & 2 & 1 & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 2 & 3 & 5 & 1 & 0 & 0 & 0 \\
+0 & 1 & 2 & 4 & 0 & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+\xrightarrow{R_2 \div{2}}
+\left[\begin{array}{cccc|cccc}
+1 & 2 & 2 & 1 & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & \frac{3}{2} & \frac{5}{2}  & \frac{1}{2} & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+```
+
+```math
+\left[\begin{array}{cccc|cccc}
+1 & 2 & 2 & 1 & 0 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & \frac{3}{2} & \frac{5}{2}  & \frac{1}{2} & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+\xrightarrow{R_1 = R_1 - 2R_2}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & -1 & -4  & -1 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & \frac{3}{2} & \frac{5}{2}  & \frac{1}{2} & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+```
+```math
+\left[\begin{array}{cccc|cccc}
+1 & 0 & -1 & -4  & -1 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & \frac{3}{2} & \frac{5}{2}  & \frac{1}{2} & 0 & 0 & 0 \\
+0 & 1 & 2 & 4  & 0 & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+\xrightarrow{R_3 = R_3 - R_2}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & -1 & -4  & -1 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & \frac{3}{2} & \frac{5}{2}  & \frac{1}{2} & 0 & 0 & 0 \\
+0 & 0 & \frac{1}{2} & \frac{3}{2}  & -\frac{1}{2} & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+```
+
+```math
+\left[\begin{array}{cccc|cccc}
+1 & 0 & -1 & -4  & -1 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & \frac{3}{2} & \frac{5}{2}  & \frac{1}{2} & 0 & 0 & 0 \\
+0 & 0 & \frac{1}{2} & \frac{3}{2}  & -\frac{1}{2} & 0 & 1 & 0 \\
+0 & 1 & 3 & 8 & 0 & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+\xrightarrow{R_4 = R_4 - R_2}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & -1 & -4  & -1 & \frac{1}{2} & 0 & 0 \\
+0 & 1 & \frac{3}{2} & \frac{5}{2}  & \frac{1}{2} & 0 & 0 & 0 \\
+0 & 0 & \frac{1}{2} & \frac{3}{2}  & -\frac{1}{2} & 0 & 1 & 0 \\
+0 & 0 & \frac{3}{2} & \frac{11}{2} & -\frac{1}{2} & -\frac{3}{2} & 0 & 1
+\end{array}\right]
+```
+
+```math
+\cdots
+```
+```math
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0  & -1 & -1 & -1 & 1 \\
+0 & 1 & 0 & 0  & 4 & -3 & -9 & 2 \\
+0 & 0 & 1 & 0  & -4 & \frac{9}{2} & 11 & -3 \\
+0 & 0 & 0 & 1 & 1 & -\frac{3}{2} & -3 & 1
+\end{array}\right]
+```
+
+### Step 5: Interpret the result & end
+
+When you have your identity matrix as the far left of your augmented matrix, you're now finished. The iverse of your matrix is what you have on the far right of your augmented matrix.
+
+```math
+A^{-1} =
+\begin{bmatrix}
+-1 & -1 & -1 & 1 \\
+4 & -3 & -9 & 2 \\
+-4 & \frac{9}{2} & 11 & -3 \\
+1 & -\frac{3}{2} & -3 & 1
+\end{bmatrix}
+```
+
+
+
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
@@ -1039,3 +1242,5 @@ det(A) = 0
 - Find the Determinant of a Matrix https://youtu.be/CcbyMH3Noow
 - Create the Inverse Matrix https://youtu.be/kWorj5BBy9k
 - Singular Matrix https://www.datacamp.com/fr/tutorial/singular-matrix
+- Inverse a matrix https://youtu.be/95dYWsZEXmM
+- Gaussian Elimination to create identity matrix https://youtu.be/PTii4TBh9kQ
