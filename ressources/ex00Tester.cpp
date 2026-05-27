@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:19:53 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 17:42:13 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:52:06 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,21 +175,37 @@ void	sclTesterVector() {
 
 	Vector	<double>a({1, 2, 3, 4});
 
+	Vector	<std::complex<double>>bonusA({std::complex<double>(1,2), std::complex<double>(3,4), std::complex<double>(5,6)});
+
 	PRINT MAGENTA "Vector:" CENDL;
 	PRINT a CENDL;
 	NLINE;
 
 	for (int i = 1; i <= 3; ++i) {
-		PRINT MAGENTA "Scaling vector by " BLUE AND i CENDL;
+		PRINT MAGENTA "Scaling Vector by " BLUE AND i CENDL;
 		a.scl(i);
 		PRINT a CENDL;
 	}
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	PRINT RED "Bonus Vector:" CENDL;
+	PRINT bonusA CENDL;
+
+	PRINT RED "Scale Bonus Vector by 4.2" CENDL;
+	bonusA.scl(4.2);
+	PRINT bonusA CENDL;
 }
 
 void	sclTesterMatrix() {
 	PRINT WHITE " --MATRIX-- " CENDL;
 
 	Matrix<double> a = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
+
+	Matrix<std::complex<double>> bonusA = {
+		{std::complex<double>(1,2),  std::complex<double>(3,-1), std::complex<double>(0,4)},
+		{std::complex<double>(-1,1), std::complex<double>(2,0),  std::complex<double>(1,-3)},
+		{std::complex<double>(0,-2), std::complex<double>(4,1),  std::complex<double>(2,2)}
+	};
 
 	PRINT RED "Matrix:" CENDL;
 	PRINT a CENDL;
@@ -201,4 +217,11 @@ void	sclTesterMatrix() {
 		PRINT a CENDL;
 	}
 
+	PRINT WHITE "  -BONUS-  " CENDL;
+	PRINT RED "Bonus Matrix:" CENDL;
+	PRINT bonusA CENDL;
+
+	PRINT RED "Scale Bonus Matrix by 4.2" CENDL;
+	bonusA.scl(4.2);
+	PRINT bonusA CENDL;
 }
