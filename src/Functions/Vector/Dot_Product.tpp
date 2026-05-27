@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:17:26 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 15:58:41 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 18:15:55 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ K	Vector<K>::dot(Vector<K> &v) {
 	K result = 0;
 
 	for (size_t i = 0; i < this->_size; ++i) {
-		result = std::fma(this->_content[i], v._content[i], result);
+		result = fma_wrapper(this->_content[i], v._content[i], result);
 	}
 	return (result);
 }
@@ -29,7 +29,7 @@ K	Vector<K>::dot(const Vector<K> &v) const {
 	K result = 0;
 
 	for (size_t i = 0; i < this->_size; ++i) {
-		result = std::fma(this->_content[i], v._content[i], result);
+		result = fma_wrapper(this->_content[i], v._content[i], result);
 	}
 	return (result);
 }

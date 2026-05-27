@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:07:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 15:55:37 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 18:15:45 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Vector<K>	Matrix<K>::mul_vec(std::initializer_list<K> vec) {
 	for (size_t i = 0; i < this->_rows; ++i) {
 		result[i] = 0;
 		for (size_t j = 0; j < this->_cols; ++j)
-			result[i] = std::fma(this->_content[i][j], vec.begin()[j], result[i]);
+			result[i] = fma_wrapper(this->_content[i][j], vec.begin()[j], result[i]);
 	}
 
 	return (Vector<K>(result, this->_rows));
@@ -36,7 +36,7 @@ Vector<K>	Matrix<K>::mul_vec(Vector<K> vec) {
 	for (size_t i = 0; i < this->_rows; ++i) {
 		result[i] = 0;
 		for (size_t j = 0; j < this->_cols; ++j)
-			result[i] = std::fma(this->_content[i][j], vec[j], result[i]);
+			result[i] = fma_wrapper(this->_content[i][j], vec[j], result[i]);
 	}
 
 	return (Vector<K>(result, this->_rows));
@@ -52,7 +52,7 @@ Matrix<K>	Matrix<K>::mul_mat(Matrix<K> mat) {
 	for (size_t i = 0; i < this->_rows; ++i)
 		for (size_t j = 0; j < mat._cols; ++j)
 			for (size_t k = 0; k < this->_cols; ++k)
-				result._content[i][j] = std::fma(this->_content[i][k], mat._content[k][j], result._content[i][j]);
+				result._content[i][j] = fma_wrapper(this->_content[i][k], mat._content[k][j], result._content[i][j]);
 
 	return (result);
 }

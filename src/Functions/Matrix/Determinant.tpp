@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 18:04:26 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 19:45:17 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 18:15:35 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ K Matrix<K>::determinant() {
 		return (this->_content[0][0]);
 
 	if (this->_cols == 2)
-		return (std::fma(this->_content[0][0], this->_content[1][1], -this->_content[0][1] * this->_content[1][0]));
+		return (fma_wrapper(this->_content[0][0], this->_content[1][1], -this->_content[0][1] * this->_content[1][0]));
 
 	K	det = static_cast<K>(0);
 	K	sign = static_cast<K>(1);
 
 	for (size_t col = 0; col < this->_cols; ++col) {
 		Matrix<K> sub = submatrix(*this, 0, col);
-		det = std::fma(sign * this->_content[0][col], sub.determinant(), det);
+		det = fma_wrapper(sign * this->_content[0][col], sub.determinant(), det);
 		sign = -sign;
 	}
 	return (det);

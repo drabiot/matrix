@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 14:09:10 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 15:59:40 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 18:16:03 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ float	Vector<K>::norm_1(void) {
 
 	for (size_t i = 0; i < this->_size; ++i) {
 		abs = (this->_content[i] < 0) ? -1 : 1;
-		result = std::fma(this->_content[i], abs, result);
+		result = fma_wrapper(this->_content[i], abs, result);
 	}
 	return (result);
 }
@@ -31,7 +31,7 @@ float	Vector<K>::norm(void) {
 	float	result = 0;
 
 	for (size_t i = 0; i < this->_size; ++i) {
-		result = std::fma(this->_content[i], this->_content[i], result);
+		result = fma_wrapper(this->_content[i], this->_content[i], result);
 	}
 	return (std::pow(result, 0.5));
 }
@@ -60,7 +60,7 @@ float	Vector<K>::norm_1(void) const {
 
 	for (size_t i = 0; i < this->_size; ++i) {
 		abs = (this->_content[i] < 0) ? -1 : 1;
-		result = std::fma(this->_content[i], abs, result);
+		result = fma_wrapper(this->_content[i], abs, result);
 	}
 	return (result);
 }
@@ -72,7 +72,7 @@ float	Vector<K>::norm(void) const {
 	float	result = 0;
 
 	for (size_t i = 0; i < this->_size; ++i) {
-		result = std::fma(this->_content[i], this->_content[i], result);
+		result = fma_wrapper(this->_content[i], this->_content[i], result);
 	}
 	return (std::pow(result, 0.5));
 }
