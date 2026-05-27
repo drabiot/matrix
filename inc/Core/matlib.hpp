@@ -6,12 +6,14 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 16:51:03 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 15:47:20 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:13:12 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATLIB_HPP
 # define MATLIB_HPP
+
+# include <complex>
 
 # include "Vector.hpp"
 # include "Matrix.hpp"

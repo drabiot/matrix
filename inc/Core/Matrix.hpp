@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 15:07:38 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:35:18 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const Matrix<U>& m);
 
 	//Functions
-	void		add(const Matrix<K>	&m);
-	void		sub(const Matrix<K>	&m);
+	void		add(Matrix<K> &m);
+	void		add(const Matrix<K> &m);
+	void		sub(Matrix<K> &m);
+	void		sub(const Matrix<K> &m);
 	void		scl(K a);
 
 	Vector<K>	mul_vec(std::initializer_list<K> vec);

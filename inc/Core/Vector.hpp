@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 15:59:25 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:35:30 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ public:
 	const K&	operator[](size_t i) const; 
 
 	//Functions
-	void		add(const Vector<K>	&v);
-	void		sub(const Vector<K>	&v);
+	void		add(Vector<K> &v);
+	void		add(const Vector<K> &v);
+	void		sub(Vector<K> &v);
+	void		sub(const Vector<K> &v);
 	void		scl(K a);
 
 	K			dot(Vector<K> &v);

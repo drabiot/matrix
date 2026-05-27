@@ -112,7 +112,10 @@ Open the project
 Adds two vectors or matrices element-wise. Modifies the object in-place.
 
 ```cpp
+void    Vector<K>::add(Vector &v);
 void    Vector<K>::add(const Vector &v);
+
+void    Matrix<K>::add(Matrix &m);
 void    Matrix<K>::add(const Matrix &m);
 ```
 
@@ -134,7 +137,10 @@ u.add(v); // u = [5.0, 7.0, 9.0]
 Subtracts two vectors or matrices element-wise. Modifies the object in-place.
 
 ```cpp
+void    Vector<K>::sub(Vector &v);
 void    Vector<K>::sub(const Vector &v);
+
+void    Matrix<K>::sub(Matrix &m);
 void    Matrix<K>::sub(const Matrix &m);
 ```
 

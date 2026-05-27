@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 20:41:16 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 15:13:33 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:31:24 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,17 @@ Matrix<K>::Matrix(const Matrix<K>& other) : _rows(other._rows), _cols(other._col
 template<typename K>
 Matrix<K>::Matrix(std::initializer_list<std::initializer_list<K>> list) {
 	this->_rows = list.size();
-	this->_cols = (this->_rows > 0) ? list.begin()->size() : 0;
+	this->_cols = 0;
 
-	this->_content = new K*[_rows];
+	for (const auto& row_list : list)
+		if (row_list.size() > this->_cols)
+			this->_cols = row_list.size();
+
+	this->_content = new K*[this->_rows];
 
 	size_t i = 0;
 	for (const auto& row_list : list) {
-		this->_content[i] = new K[this->_cols];
+		this->_content[i] = new K[this->_cols]();
 		std::copy(row_list.begin(), row_list.end(), this->_content[i]);
 		i++;
 	}
