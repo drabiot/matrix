@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 20:41:16 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 14:27:23 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 15:13:33 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,20 @@ size_t	Matrix<K>::getCols(void) const {
 template<typename K>
 K**	Matrix<K>::getContent(void) const {
 	return (this->_content);
+}
+
+template<typename K>
+void	Matrix<K>::displayMatrix(void) {
+	for (size_t i = 0; i < this->_rows; ++i) {
+		for (size_t j = 0; j < this->_cols; ++j) {
+			PRINT CYAN AND this->_content[i][j];
+			if (j + 1 < this->_cols)
+				PRINT BLUE ", ";
+		}
+		if (i + 1 < this->_rows)
+				PRINT BLUE ", " CENDL;
+	}
+	NLINE;
 }
 
 template<typename K>

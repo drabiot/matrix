@@ -7,7 +7,7 @@
 
 Matrix is a 42 project where you have to create a library about Vector and Matrix space.
 
-This project is aimed around math and what you can do with Vectors and Matrix in Computer Science.
+This project is aimed around math and what you can do with Vectors and Matrix in Computer Science & the first step into Linear ALgebra.
 
 ![Static Badge](https://img.shields.io/badge/language-c%2B%2B17-blue)
 
@@ -33,6 +33,7 @@ This project is aimed around math and what you can do with Vectors and Matrix in
   - [Determinant](#determinant)
   - [Inverse](#inverse)
   - [Rank](#rank)
+  - [Projection](#projection)
 - [Sources](#sources)
 
 
@@ -103,6 +104,7 @@ Open the project
 | Determinant | Returns the Deterninant of the Matrix |
 | Inverse | Returns the Inverse Matrix of a Matrix if it's possible |
 | Rank | Returns the Rank of a Matrix |
+| Projection | Returns a Projection Matrix |
 
 ## Documentation
 
@@ -1318,6 +1320,33 @@ B =
 \text{rank(B) = 2}
 ```
 
+### PROJECTION
+Returns a projection matrix.
+
+```cpp
+Matrix<K>	projection(float fov, float ratio, float near, float far);
+```
+
+| Overload | Time complexity | Space complexity |
+|---|---|---|
+| projection | O(1) | O(1) |
+
+```cpp
+projection(90, 1, 0.1, 100);	// [1, 0,    0,    0]
+								// [0, 1,    0,    0]
+								// [0, 0, -1.001, -1]
+								// [0, 0, -0.1001, 0]
+
+projection(45, 1, 0.1, 100);	// [2.41421, 0, 0, 0]
+								// [0, 2.41421, 0, 0]
+								// [0, 0, -1.001, -1]
+								// [0, 0, -0.1001, 0]
+
+projection(120, 1, 0.1, 100);	// [0.57735, 0, 0, 0]
+								// [0, 0.57735, 0, 0]
+								// [0, 0, -1.001, -1]
+								// [0, 0, -0.1001, 0]
+```
 
 ## Sources
 - Math explications https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
@@ -1334,3 +1363,4 @@ B =
 - Inverse a matrix https://youtu.be/95dYWsZEXmM
 - Gaussian Elimination to create identity matrix https://youtu.be/PTii4TBh9kQ
 - Compute the rank of a matrix https://youtu.be/cSj82GG6MX4
+- Compute the matrix projection https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/building-basic-perspective-projection-matrix.html

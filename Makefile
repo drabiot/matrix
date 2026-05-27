@@ -6,7 +6,7 @@
 #    By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/13 19:56:04 by tchartie          #+#    #+#              #
-#    Updated: 2026/05/26 16:03:29 by tchartie         ###   ########.fr        #
+#    Updated: 2026/05/27 14:28:57 by tchartie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,8 @@ NAMES				=	main.cpp \
 						ex10Tester.cpp \
 						ex11Tester.cpp \
 						ex12Tester.cpp \
-						ex13Tester.cpp
+						ex13Tester.cpp \
+						ex14Tester.cpp
 
 TEST				=	$(addprefix $(DIR), $(NAMES))
 

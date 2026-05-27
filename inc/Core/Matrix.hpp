@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:16:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 15:58:03 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 15:07:38 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ public:
 	size_t		getCols(void) const;
 	K**			getContent(void) const;
 	bool		isSquare(void);
+	void		displayMatrix(void);
 	K*			operator[](size_t i);
 	const K*	operator[](size_t i) const;
 

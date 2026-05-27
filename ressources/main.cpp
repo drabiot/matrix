@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:37:35 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 16:03:14 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 14:29:44 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv) {
 		PRINT MAGENTA "If you want to test everything at once type " RED "./tester" MAGENTA " without argument" CENDL;
 		NLINE;
 		PRINT GREEN "If you want to one specific function type " YELLOW "./tester <name_of_your_function>" CENDL;
-		PRINT BLUE "Here all of the function:\n" CYAN "  - add\n  - sub\n  - scl\n  - linear_combination\n  - linear_interpolation\n  - dot_product\n  - cosine\n  - cross_product\n  - matrix_multiplication\n  - trace\n  - transpose\n  - row-echelon_form\n  - determinant\n  - inverse\n  - rank" CENDL;
+		PRINT BLUE "Here all of the function:\n" CYAN "  - add\n  - sub\n  - scl\n  - linear_combination\n  - linear_interpolation\n  - dot_product\n  - cosine\n  - cross_product\n  - matrix_multiplication\n  - trace\n  - transpose\n  - row-echelon_form\n  - determinant\n  - inverse\n  - rank\n  - projection" CENDL;
 		return (0);
 	}
 
@@ -92,6 +92,10 @@ int	main(int argc, char **argv) {
 		if (all || (argc > 1 && str(argv[1]) == "rank")) {
 			PRINT WHITE " --RANK TESTER-- " CENDL;
 			rankTester();
+		}
+		if (all || (argc > 1 && str(argv[1]) == "projection")) {
+			PRINT WHITE " --PROJECTION TESTER-- " CENDL;
+			projectionTester();
 		}
 	} catch (const std::exception &e) {
 		ERROR RED AND e.what() CENDL;
