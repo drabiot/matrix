@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:19:53 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 17:36:12 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:42:13 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,9 @@ void	subTesterVector() {
 	Vector	<double>a({1, 2, 3, 4});
 	Vector	<double>b({-6.0, 2.6, -4.2, 8.1});
 
+	Vector	<std::complex<double>>bonusA({std::complex<double>(1,2), std::complex<double>(3,4), std::complex<double>(5,6)});
+	Vector	<std::complex<double>>bonusB({std::complex<double>(2,-1), std::complex<double>(0,3), std::complex<double>(4,0)});
+
 	PRINT MAGENTA "First Vector:" CENDL;
 	PRINT a CENDL;
 	PRINT MAGENTA "Second Vector:" CENDL;
@@ -114,8 +117,18 @@ void	subTesterVector() {
 	NLINE;
 
 	PRINT MAGENTA "Subtract First Vector to the Second Vector" CENDL;
-	b.add(a);
+	b.sub(a);
 	PRINT b CENDL;
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	PRINT RED "First Bonus Vector:" CENDL;
+	PRINT bonusA CENDL;
+	PRINT RED "Second Bonus Vector:" CENDL;
+	PRINT bonusB CENDL;
+
+	PRINT RED "Subtract First Bonus Vector to the Second Bonus Vector" CENDL;
+	bonusB.sub(bonusA);
+	PRINT bonusB CENDL;
 }
 
 void	subTesterMatrix() {
@@ -124,6 +137,18 @@ void	subTesterMatrix() {
 	Matrix<double> a = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
 	Matrix<double> b = {{2.5, 4.4, 2.9}, {-1.2, -5.0, 6.5}, {3.3, 4.2, -9.0}};
 
+	Matrix<std::complex<double>> bonusA = {
+		{std::complex<double>(1,2),  std::complex<double>(3,-1), std::complex<double>(0,4)},
+		{std::complex<double>(-1,1), std::complex<double>(2,0),  std::complex<double>(1,-3)},
+		{std::complex<double>(0,-2), std::complex<double>(4,1),  std::complex<double>(2,2)}
+	};
+
+	Matrix<std::complex<double>> bonusB = {
+		{std::complex<double>(1,-1), std::complex<double>(0,2)},
+		{std::complex<double>(-1,0), std::complex<double>(2,1),  std::complex<double>(1,-1)},
+		{std::complex<double>(4,1),  std::complex<double>(-2,0), std::complex<double>(0,3)}
+	};
+
 	PRINT RED "First Matrix:" CENDL;
 	PRINT a CENDL;
 	PRINT RED "Second Matrix:" CENDL;
@@ -131,8 +156,18 @@ void	subTesterMatrix() {
 	NLINE;
 
 	PRINT RED "Subtract First Matrix to the Second Matrix" CENDL;
-	a.add(a);
+	b.sub(a);
 	PRINT b CENDL;
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	PRINT MAGENTA "First Bonus Matrix:" CENDL;
+	PRINT bonusA CENDL;
+	PRINT MAGENTA "Second Bonus Matrix:" CENDL;
+	PRINT bonusB CENDL;
+
+	PRINT MAGENTA "Subtract First Bonus Matrix to the Second Bonus Matrix" CENDL;
+	bonusB.sub(bonusA);
+	PRINT bonusB CENDL;
 }
 
 void	sclTesterVector() {
