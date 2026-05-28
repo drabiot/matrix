@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:47:09 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 17:36:29 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:59:04 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	traceTester() {
 	};
 
 	Matrix<std::complex<double>>bonusB = {
-		{std::complex<double>(1,-1), std::complex<double>(0,2), std::complex<double>(-0.6)},
+		{std::complex<double>(1,-1), std::complex<double>(0,2), std::complex<double>(-0,6)},
 		{std::complex<double>(-1,0), std::complex<double>(2,1),  std::complex<double>(1,-1)},
 		{std::complex<double>(4,1),  std::complex<double>(-2,0), std::complex<double>(0,3)}
 	};

@@ -6,9 +6,15 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 14:22:15 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 15:55:44 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:52:27 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+template<typename K>
+
+static K clean_zero(K val) {
+	return (val == static_cast<K>(0)) ? static_cast<K>(0) : val;
+}
 
 // Time complexity:  O(n³)
 // Space complexity: O(n²)

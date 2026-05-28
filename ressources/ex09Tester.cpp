@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 16:27:06 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 16:16:33 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:58:58 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	transposeTester() {
 	};
 
 	Matrix<std::complex<double>>bonusB = {
-		{std::complex<double>(1,-1), std::complex<double>(0,2), std::complex<double>(-0.6)},
+		{std::complex<double>(1,-1), std::complex<double>(0,2), std::complex<double>(-0,6)},
 		{std::complex<double>(-1,0), std::complex<double>(2,1),  std::complex<double>(1,-1)},
 		{std::complex<double>(4,1),  std::complex<double>(-2,0), std::complex<double>(0,3)}
 	};

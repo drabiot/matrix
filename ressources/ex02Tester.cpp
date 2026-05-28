@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 21:42:11 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 13:18:05 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:59:22 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	linear_interpolationTester(void) {
 	};
 
 	Matrix<std::complex<double>> matBonusB = {
-		{std::complex<double>(1,-1), std::complex<double>(0,2), std::complex<double>(-0.6)},
+		{std::complex<double>(1,-1), std::complex<double>(0,2), std::complex<double>(-0,6)},
 		{std::complex<double>(-1,0), std::complex<double>(2,1),  std::complex<double>(1,-1)},
 		{std::complex<double>(4,1),  std::complex<double>(-2,0), std::complex<double>(0,3)}
 	};
