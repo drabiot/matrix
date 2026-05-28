@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:07:40 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 18:15:45 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 15:35:02 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ Vector<K>	Matrix<K>::mul_vec(Vector<K> vec) {
 // Space complexity: O(mp)
 template<typename K>
 Matrix<K>	Matrix<K>::mul_mat(Matrix<K> mat) {
+	if (this->_cols != mat.getRows())
+		throw std::invalid_argument("Matrix cannot be multiply");
 	Matrix<K>	result(this->_rows, mat._cols);
 
 	for (size_t i = 0; i < this->_rows; ++i)

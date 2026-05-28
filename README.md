@@ -97,7 +97,7 @@ Open the project
 | Norm | Returns different kinds of norms of a vector | ✅ |
 | Cosine | Returns the cosine of the angle between two vectors | ✅ |
 | Cross Product | Returns the cross product of two 3D vectors | ❌ |
-| Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector | ❌ |
+| Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector | ✅ |
 | Trace | Returns the Trace of the Square Matrix | ❌ |
 | Transpose | Returns the Transpose of a Matrix | ❌ |
 | Row-Echelon Form | Returns the Row-Echelon Form of the Matrix | ❌ |
