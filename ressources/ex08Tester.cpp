@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:47:09 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/20 16:14:05 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 16:13:11 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,29 @@ void	traceTester() {
 	PRINT m5;
 	PRINT BLUE "Trace" CENDL;
 	PRINT CYAN AND m5.trace() CENDL;
+	NLINE;
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	Matrix<std::complex<double>>bonusA = {
+		{std::complex<double>(1,2),  std::complex<double>(3,-1), std::complex<double>(0,4)},
+		{std::complex<double>(-1,1), std::complex<double>(2,0),  std::complex<double>(1,-3)},
+		{std::complex<double>(0,-2), std::complex<double>(4,1),  std::complex<double>(2,2)}
+	};
+
+	Matrix<std::complex<double>>bonusB = {
+		{std::complex<double>(1,-1), std::complex<double>(0,2), std::complex<double>(-0.6)},
+		{std::complex<double>(-1,0), std::complex<double>(2,1),  std::complex<double>(1,-1)},
+		{std::complex<double>(4,1),  std::complex<double>(-2,0), std::complex<double>(0,3)}
+	};
+
+	PRINT MAGENTA "Fist Bonus Matrix:" CENDL;
+	PRINT bonusA;
+	PRINT BLUE "Trace" CENDL;
+	PRINT CYAN AND bonusA.trace() CENDL;
+	NLINE;
+	PRINT MAGENTA "Second Bonus Matrix:" CENDL;
+	PRINT bonusB;
+	PRINT BLUE "Trace" CENDL;
+	PRINT CYAN AND bonusB.trace() CENDL;
 	NLINE;
 }
