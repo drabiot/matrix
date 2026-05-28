@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:19:53 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 17:52:06 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:25:27 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	addTesterVector() {
 
 	Vector	<double>a({1, 2, 3, 4});
 	Vector	<double>b({-6.0, 2.6, -4.2, 8.1});
-	Vector	<double>c({1, 0, 0});
+	Vector	<double>c({1, 0});
 
 	Vector	<std::complex<double>>bonusA({std::complex<double>(1,2), std::complex<double>(3,4), std::complex<double>(5,6)});
 	Vector	<std::complex<double>>bonusB({std::complex<double>(2,-1), std::complex<double>(0,3), std::complex<double>(4,0)});
@@ -39,8 +39,9 @@ void	addTesterVector() {
 	PRINT c CENDL;
 
 	PRINT MAGENTA "Add Third Vector to the Second Vector" CENDL;
-	c.add(a);
+	b.add(c);
 	PRINT c CENDL;
+
 
 	PRINT WHITE "  -BONUS-  " CENDL;
 	PRINT RED "First Bonus Vector:" CENDL;
@@ -59,7 +60,7 @@ void	addTesterMatrix() {
 	Matrix<double> a = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
 	Matrix<double> b = {{2.5, 4.4, 2.9}, {-1.2, -5.0, 6.5}, {3.3, 4.2, -9.0}};
 	Matrix<double> c = {{2.5, 4.4, 2.9}, {-1.2, -5.0, 6.5}};
-	Matrix<double> d = {{2.5}, {-1.2, -5.0, 6.5, 4.2}, {2, -6.3}};
+	Matrix<double> d = {{-1.2, -5.0, 6.5, 4.2}};
 
 	Matrix<std::complex<double>> bonusA = {
 		{std::complex<double>(1,2),  std::complex<double>(3,-1), std::complex<double>(0,4)},

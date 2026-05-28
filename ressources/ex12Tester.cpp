@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 14:30:52 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/26 14:42:11 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:40:37 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ void	inverseTester() {
 	NLINE;
 	PRINT MAGENTA "Fourth Matrix:" CENDL;
 	PRINT m4;
-	PRINT BLUE "Inverse of the Third Matrix" CENDL;
-	PRINT CYAN AND m4.inverse() CENDL;
+	PRINT BLUE "Inverse of the Fourth Matrix" CENDL;
+	PRINT CYAN AND m4.inverse() CENDL;						//Error
 	NLINE;
 	PRINT MAGENTA "Fifth Matrix:" CENDL;
 	PRINT m5;
-	PRINT BLUE "Inverse of the Third Matrix" CENDL;
-	PRINT CYAN AND m5.inverse() CENDL;
+	PRINT BLUE "Inverse of the Fifth Matrix" CENDL;
+	PRINT CYAN AND m5.inverse() CENDL;						//Error
 	NLINE;
 	PRINT MAGENTA "Six Matrix:" CENDL;
 	PRINT m6;
-	PRINT BLUE "Inverse of the Third Matrix" CENDL;
-	PRINT CYAN AND m6.inverse() CENDL;
+	PRINT BLUE "Inverse of the Six Matrix" CENDL;
+	PRINT CYAN AND m6.inverse() CENDL;						//Error
 	NLINE;
 }

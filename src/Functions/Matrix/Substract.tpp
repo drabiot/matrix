@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:11:43 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 17:33:14 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:24:16 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 // Space complexity: O(1)
 template<typename K>
 void	Matrix<K>::sub(Matrix<K> &m) {
-	for (size_t i = 0; i < this->_rows; ++i) {
-		for (size_t j = 0; j < this->_cols; ++j)
+	for (size_t i = 0; i < this->_rows && i < m.getRows(); ++i) {
+		for (size_t j = 0; j < this->_cols && i < m.getCols(); ++j)
 			this->_content[i][j] = this->_content[i][j] - m._content[i][j];
 	}
 }
@@ -24,8 +24,8 @@ void	Matrix<K>::sub(Matrix<K> &m) {
 // Space complexity: O(1)
 template<typename K>
 void	Matrix<K>::sub(const Matrix<K> &m) {
-	for (size_t i = 0; i < this->_rows; ++i) {
-		for (size_t j = 0; j < this->_cols; ++j)
+	for (size_t i = 0; i < this->_rows && i < m.getRows(); ++i) {
+		for (size_t j = 0; j < this->_cols && i < m.getCols(); ++j)
 			this->_content[i][j] = this->_content[i][j] - m._content[i][j];
 	}
 }

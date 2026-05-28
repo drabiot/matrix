@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 18:15:10 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 18:27:29 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:39:11 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void	determinantTester() {
 	PRINT MAGENTA "Fifth Matrix:" CENDL;
 	PRINT m5;
 	PRINT BLUE "Determinant of the Fifth Matrix" CENDL;
-	PRINT CYAN AND m5.determinant() CENDL;
+	PRINT CYAN AND m5.determinant() CENDL;						//Error
 	NLINE;
 }

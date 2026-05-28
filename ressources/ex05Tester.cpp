@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 15:50:43 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 15:02:59 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:32:59 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	cosineTester() {
 	NLINE;
 
 	PRINT RED " 3rd Test " CENDL;
-	const Vector	<double>e({1, 2, 3});
-	const Vector	<double>f({4, 5, 6});
+	const Vector	<double>e({1, 2, 3, 4});
+	const Vector	<double>f({4, 5, 6, 2});
 
 	PRINT MAGENTA "Fifth Vector:" CENDL;
 	PRINT e CENDL;

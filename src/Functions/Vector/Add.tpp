@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 18:11:45 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 17:33:29 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:22:21 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // Space complexity: O(1)
 template<typename K>
 void	Vector<K>::add(Vector<K> &v) {
-	for (size_t i = 0; i < this->_size; ++i) {
+	for (size_t i = 0; i < this->_size && i < v._size; ++i) {
 		this->_content[i] = this->_content[i] + v._content[i];
 	}
 }
@@ -23,7 +23,7 @@ void	Vector<K>::add(Vector<K> &v) {
 // Space complexity: O(1)
 template<typename K>
 void	Vector<K>::add(const Vector<K> &v) {
-	for (size_t i = 0; i < this->_size; ++i) {
+	for (size_t i = 0; i < this->_size && i < v._size; ++i) {
 		this->_content[i] = this->_content[i] + v._content[i];
 	}
 }

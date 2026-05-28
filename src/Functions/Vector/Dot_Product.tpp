@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:17:26 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 13:26:41 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:31:13 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ template<typename K>
 K	Vector<K>::dot(Vector<K> &v) {
 	K result = 0;
 
-	for (size_t i = 0; i < this->_size; ++i) {
+	for (size_t i = 0; i < this->_size && i < v._size; ++i) {
 		if constexpr (is_complex<K>::value)
 			result = fma_wrapper(std::conj(this->_content[i]), v._content[i], result);
 		else
@@ -31,7 +31,7 @@ template<typename K>
 K	Vector<K>::dot(const Vector<K> &v) const {
 	K result = 0;
 
-	for (size_t i = 0; i < this->_size; ++i) {
+	for (size_t i = 0; i < this->_size && i < v._size; ++i) {
 		if constexpr (is_complex<K>::value)
 			result = fma_wrapper(std::conj(this->_content[i]), v._content[i], result);
 		else

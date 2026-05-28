@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 21:32:00 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 13:13:30 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:29:33 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ template<typename V>
 Vector<V> lerp(Vector<V> u, Vector<V> v, float t) {
 	Vector<V> result(u.size());
 	
-	for (size_t i = 0; i < u.size(); ++i)
+	for (size_t i = 0; i < u.size() && i < v.size(); ++i)
 		result[i] = fma_wrapper(v[i] - u[i], t, u[i]);
 	return (result);
 }

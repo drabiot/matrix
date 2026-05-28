@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:47:09 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 16:13:11 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:36:29 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ void	traceTester() {
 	PRINT MAGENTA "Fourth Matrix:" CENDL;
 	PRINT m4;
 	PRINT BLUE "Trace" CENDL;
-	PRINT CYAN AND m4.trace() CENDL;
+	PRINT CYAN AND m4.trace() CENDL;		//Error
 	NLINE;
 	PRINT MAGENTA "Fifth Matrix:" CENDL;
 	PRINT m5;
 	PRINT BLUE "Trace" CENDL;
-	PRINT CYAN AND m5.trace() CENDL;
+	PRINT CYAN AND m5.trace() CENDL;		//Error
 	NLINE;
 
 	PRINT WHITE "  -BONUS-  " CENDL;

@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:14:06 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 15:31:49 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:38:02 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	matrix_multiplicationTester() {
 
 	PRINT RED " 5th Test " CENDL;
 	PRINT MAGENTA "Compute product between Seven matrix and Six matrix" CENDL;
-	PRINT YELLOW AND m7.mul_mat(m6) CENDL;
+	PRINT YELLOW AND m7.mul_mat(m6) CENDL;											//Error
 	NLINE;
 
 	Vector	<std::complex<double>>vecBonusA({std::complex<double>(1,2), std::complex<double>(3,4), std::complex<double>(5,6)});
