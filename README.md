@@ -96,7 +96,7 @@ Open the project
 | [Dot Product](#dot-product) | Returns the sum of the element-wise products of two vectors | ✅ | ✅ | ❌ |
 | [Norm](#norm) | Returns different kinds of norms of a vector | ✅ | ✅ | ❌ |
 | [Cosine](#cosine) | Returns the cosine of the angle between two vectors | ✅ |❌ | ❌ 
-| [Cross Product](#cross-product) | Returns the cross product of two 3D vectors | ❌ |❌ | ❌ 
+| [Cross Product](#cross-product) | Returns the cross product of two 3D vectors | ✅ |❌ | ❌ 
 | [Matrix Multiplication](#matrix-multiplication) | Returns the result of the product of two matrix or a matrix with a vector | ✅ | ❌ | ✅ |
 | [Trace](#trace) | Returns the Trace of the Square Matrix | ✅ | ❌ | ✅ |
 | [Transpose](#transpose) | Returns the Transpose of a Matrix | ✅ | ❌ | ✅ |

@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 13:14:57 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/21 17:38:27 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:14:29 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,26 @@ void	cross_productTester() {
 	PRINT RED " Few value Test " CENDL;
 
 	PRINT MAGENTA "Cross Product between Second vector and Third vector" CENDL;
-	PRINT YELLOW AND cross_product({1, 2}, {4, 5}) CENDL;
+	PRINT YELLOW AND cross_product({1}, {4}) CENDL;
 	NLINE;
 
 	PRINT RED " Too many value Test " CENDL;
 
 	PRINT MAGENTA "Cross Product between Second vector and Third vector" CENDL;
 	PRINT YELLOW AND cross_product({1, 2, 3, 4}, {5, 6, 7, 8}) CENDL;
+	NLINE;
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	Vector	<std::complex<double>>bonusA({std::complex<double>(1,2), std::complex<double>(3,4), std::complex<double>(5,6)});
+	Vector	<std::complex<double>>bonusB({std::complex<double>(2,-1), std::complex<double>(0,3), std::complex<double>(4,2)});
+
+	PRINT MAGENTA "First Bonus Vector:" CENDL;
+	PRINT bonusA CENDL;
+	PRINT MAGENTA "Second Bonus Vector:" CENDL;
+	PRINT bonusB CENDL;
+	NLINE;
+
+	PRINT MAGENTA "Cross Product between Second vector and Third vector" CENDL;
+	PRINT YELLOW AND cross_product(bonusA, bonusB) CENDL;
 	NLINE;
 }
