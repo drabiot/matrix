@@ -100,7 +100,7 @@ Open the project
 | [Matrix Multiplication](#matrix-multiplication) | Returns the result of the product of two matrix or a matrix with a vector | ✅ | ❌ | ✅ |
 | [Trace](#trace) | Returns the Trace of the Square Matrix | ✅ | ❌ | ✅ |
 | [Transpose](#transpose) | Returns the Transpose of a Matrix | ✅ | ❌ | ✅ |
-| [Row-Echelon Form](#row-echelon-form) | Returns the Row-Echelon Form of the Matrix | ❌ | ❌ | ✅ |
+| [Row-Echelon Form](#row-echelon-form) | Returns the Row-Echelon Form of the Matrix | ✅ | ❌ | ✅ |
 | [Determinant](#determinant) | Returns the Deterninant of the Matrix | ❌ | ❌ | ✅ |
 | [Inverse](#inverse) | Returns the Inverse Matrix of a Matrix if it's possible | ❌ | ❌ | ✅ |
 | [Rank](#rank) | Returns the Rank of a Matrix | ❌ | ❌ | ✅ |
