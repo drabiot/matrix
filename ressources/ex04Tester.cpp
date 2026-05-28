@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 14:21:37 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 14:50:42 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 14:15:26 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,21 @@ void	normTester(void) {
 	PRINT YELLOW AND c.norm() CENDL;
 	PRINT GREEN AND c.norm_inf() CENDL;
 	NLINE;
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	Vector	<std::complex<double>>bonusA({std::complex<double>(1,2), std::complex<double>(3,4), std::complex<double>(5,6)});
+	Vector	<std::complex<double>>bonusB({std::complex<double>(2,-1), std::complex<double>(0,3)});
+
+	PRINT MAGENTA "Norm:" CENDL;
+	PRINT BLUE AND bonusA.norm_1() CENDL;
+	PRINT YELLOW AND bonusA.norm() CENDL;
+	PRINT GREEN AND bonusA.norm_inf() CENDL;
+	NLINE;
+
+	PRINT MAGENTA "Norm:" CENDL;
+	PRINT BLUE AND bonusB.norm_1() CENDL;
+	PRINT YELLOW AND bonusB.norm() CENDL;
+	PRINT GREEN AND bonusB.norm_inf() CENDL;
+	NLINE;
+
 }
