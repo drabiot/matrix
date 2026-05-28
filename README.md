@@ -94,7 +94,7 @@ Open the project
 | Linear Combination | Returns a linear combination of vectors with given coefficients | ✅ |
 | Linear Interpolation | Returns the linear interpolation between two values | ✅ |
 | Dot Product | Returns the sum of the element-wise products of two vectors | ✅ |
-| Norm | Returns different kinds of norms of a vector | ❌ |
+| Norm | Returns different kinds of norms of a vector | ✅ |
 | Cosine | Returns the cosine of the angle between two vectors | ❌ |
 | Cross Product | Returns the cross product of two 3D vectors | ❌ |
 | Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector | ❌ |
