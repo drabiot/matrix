@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:30:54 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 18:14:40 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 13:43:19 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Vector<K>	linear_combination(std::initializer_list<Vector<K>> u, std::initialize
 	size_t		i = 0;
 
 	for (const Vector<K>& vec : u) {
+		if (i >= coefs.size())
+			break;
 		for (size_t j = 0; j < vec.size(); ++j)
 			result[j] = fma_wrapper(coefs.begin()[i], vec[j], result[j]);
 		++i;
@@ -35,6 +37,8 @@ Vector<K>	linear_combination(std::initializer_list<Vector<K>> u, Vector<K> coefs
 	size_t		i = 0;
 
 	for (const Vector<K>& vec : u) {
+		if (i >= coefs.size())
+			break;
 		for (size_t j = 0; j < vec.size(); ++j)
 			result[j] = fma_wrapper(coefs[i], vec[j], result[j]);
 		++i;
@@ -49,9 +53,12 @@ template<typename K>
 Vector<K> linear_combination(Matrix<K> u, std::initializer_list<K> coefs) {
 	Vector<K>	result(u.getCols());
 
-	for (size_t i = 0; i < u.getRows(); ++i)
+	for (size_t i = 0; i < u.getRows(); ++i) {
+		if (i >= coefs.size())
+			break;
 		for (size_t j = 0; j < u.getCols(); ++j)
 			result[j] = fma_wrapper(coefs.begin()[i], u[i][j], result[j]);
+	}
 	return (result);
 }
 
@@ -62,8 +69,11 @@ template<typename K>
 Vector<K> linear_combination(Matrix<K> u, Vector<K> coefs) {
 	Vector<K>	result(u.getCols());
 
-	for (size_t i = 0; i < u.getRows(); ++i)
+	for (size_t i = 0; i < u.getRows(); ++i) {
+		if (i >= coefs.size())
+			break;
 		for (size_t j = 0; j < u.getCols(); ++j)
 			result[j] = fma_wrapper(coefs[i], u[i][j], result[j]);
+	}
 	return (result);
 }

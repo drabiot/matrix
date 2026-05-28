@@ -1371,3 +1371,4 @@ projection(120, 1, 0.1, 100);	// [0.57735, 0, 0, 0]
 - Compute the rank of a matrix https://youtu.be/cSj82GG6MX4
 - Compute the matrix projection https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/building-basic-perspective-projection-matrix.html
 - How to do a dot product between two complex numbers vector https://math.stackexchange.com/questions/2459814/what-is-the-dot-product-of-complex-vectors
+- How to do an Hermitian dot product https://fr.wikipedia.org/wiki/Hermitien
