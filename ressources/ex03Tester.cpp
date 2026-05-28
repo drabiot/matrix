@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:25:07 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/19 13:38:42 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 13:23:39 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,39 @@ void	dot_productTester(void) {
 
 	PRINT MAGENTA "Dot product between Seven Vector & Eight Vector" CENDL;
 	PRINT YELLOW AND g.dot(h) CENDL;
+	NLINE;
+
+	PRINT RED " 5th Test " CENDL;
+	Vector	<double>i({-1, 6});
+	Vector	<double>j({3, 2, 5.2, 8});
+
+	PRINT MAGENTA "Nine Vector:" CENDL;
+	PRINT i CENDL;
+	PRINT MAGENTA "Ten Vector:" CENDL;
+	PRINT j CENDL;
+	NLINE;
+
+	PRINT MAGENTA "Dot product between Nine Vector & Ten Vector" CENDL;
+	PRINT YELLOW AND i.dot(j) CENDL;
+	NLINE;
+	PRINT MAGENTA "Dot product between Ten Vector & Nine Vector" CENDL;
+	PRINT YELLOW AND j.dot(i) CENDL;
+	NLINE;
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	Vector	<std::complex<double>>bonusA({std::complex<double>(1,2), std::complex<double>(3,4), std::complex<double>(5,6)});
+	Vector	<std::complex<double>>bonusB({std::complex<double>(2,-1), std::complex<double>(0,3), std::complex<double>(4,0)});
+
+	PRINT MAGENTA "First Bonus Vector:" CENDL;
+	PRINT bonusA CENDL;
+	PRINT MAGENTA "Second Bonus Vector:" CENDL;
+	PRINT bonusB CENDL;
+	NLINE;
+
+	PRINT MAGENTA "Dot product between First Bonus Vector & Second Bonus Vector" CENDL;
+	PRINT YELLOW AND bonusA.dot(bonusB) CENDL;
+	NLINE;
+	PRINT MAGENTA "Dot product between Second Bonus Vector & First Bonus Vector" CENDL;
+	PRINT YELLOW AND bonusB.dot(bonusA) CENDL;
 	NLINE;
 }

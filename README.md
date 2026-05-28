@@ -93,7 +93,7 @@ Open the project
 | Scl | Scales a vector or matrix by a scalar | ✅ |
 | Linear Combination | Returns a linear combination of vectors with given coefficients | ✅ |
 | Linear Interpolation | Returns the linear interpolation between two values | ✅ |
-| Dot Product | Returns the sum of the element-wise products of two vectors | ❌ |
+| Dot Product | Returns the sum of the element-wise products of two vectors | ✅ |
 | Norm | Returns different kinds of norms of a vector | ❌ |
 | Cosine | Returns the cosine of the angle between two vectors | ❌ |
 | Cross Product | Returns the cross product of two 3D vectors | ❌ |
@@ -1370,3 +1370,4 @@ projection(120, 1, 0.1, 100);	// [0.57735, 0, 0, 0]
 - Gaussian Elimination to create identity matrix https://youtu.be/PTii4TBh9kQ
 - Compute the rank of a matrix https://youtu.be/cSj82GG6MX4
 - Compute the matrix projection https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/building-basic-perspective-projection-matrix.html
+- How to do a dot product between two complex numbers vector https://math.stackexchange.com/questions/2459814/what-is-the-dot-product-of-complex-vectors

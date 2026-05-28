@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 16:51:03 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 18:20:17 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/28 13:27:02 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ inline auto fma_wrapper(const A& a, const B& b, const C& c) {
 	else
 		return (static_cast<T>(a) * static_cast<T>(b) + static_cast<T>(c));
 }
+
+template<typename T>
+struct is_complex : std::false_type {};
+
+template<typename T>
+struct is_complex<std::complex<T>> : std::true_type {};
 
 # include "Vector.hpp"
 # include "Matrix.hpp"
