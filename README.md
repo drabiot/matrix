@@ -92,7 +92,7 @@ Open the project
 | Sub | Subtracts two vectors or matrices element-wise | ✅ |
 | Scl | Scales a vector or matrix by a scalar | ✅ |
 | Linear Combination | Returns a linear combination of vectors with given coefficients | ✅ |
-| Linear Interpolation | Returns the linear interpolation between two values | ❌ |
+| Linear Interpolation | Returns the linear interpolation between two values | ✅ |
 | Dot Product | Returns the sum of the element-wise products of two vectors | ❌ |
 | Norm | Returns different kinds of norms of a vector | ❌ |
 | Cosine | Returns the cosine of the angle between two vectors | ❌ |
