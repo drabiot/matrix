@@ -95,7 +95,7 @@ Open the project
 | Linear Interpolation | Returns the linear interpolation between two values | ✅ |
 | Dot Product | Returns the sum of the element-wise products of two vectors | ✅ |
 | Norm | Returns different kinds of norms of a vector | ✅ |
-| Cosine | Returns the cosine of the angle between two vectors | ❌ |
+| Cosine | Returns the cosine of the angle between two vectors | ✅ |
 | Cross Product | Returns the cross product of two 3D vectors | ❌ |
 | Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector | ❌ |
 | Trace | Returns the Trace of the Square Matrix | ❌ |
@@ -1372,3 +1372,4 @@ projection(120, 1, 0.1, 100);	// [0.57735, 0, 0, 0]
 - Compute the matrix projection https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/building-basic-perspective-projection-matrix.html
 - How to do a dot product between two complex numbers vector https://math.stackexchange.com/questions/2459814/what-is-the-dot-product-of-complex-vectors
 - How to do an Hermitian dot product https://fr.wikipedia.org/wiki/Hermitien
+- Complex Numbers in Cosine https://www.physicsforums.com/threads/angles-between-complex-vectors.864707/
