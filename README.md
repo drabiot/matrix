@@ -88,23 +88,23 @@ Open the project
 
 | Function | Description | Work for Complex Nb |
 | -------- | ----------- | :-----------------: |
-| Add | Adds two vectors or matrices element-wise | ✅ |
-| Sub | Subtracts two vectors or matrices element-wise | ✅ |
-| Scl | Scales a vector or matrix by a scalar | ✅ |
-| Linear Combination | Returns a linear combination of vectors with given coefficients | ✅ |
-| Linear Interpolation | Returns the linear interpolation between two values | ✅ |
-| Dot Product | Returns the sum of the element-wise products of two vectors | ✅ |
-| Norm | Returns different kinds of norms of a vector | ✅ |
-| Cosine | Returns the cosine of the angle between two vectors | ✅ |
-| Cross Product | Returns the cross product of two 3D vectors | ❌ |
-| Matrix Multiplication | Returns the result of the product of two matrix or a matrix with a vector | ✅ |
-| Trace | Returns the Trace of the Square Matrix | ✅ |
-| Transpose | Returns the Transpose of a Matrix | ❌ |
-| Row-Echelon Form | Returns the Row-Echelon Form of the Matrix | ❌ |
-| Determinant | Returns the Deterninant of the Matrix | ❌ |
-| Inverse | Returns the Inverse Matrix of a Matrix if it's possible | ❌ |
-| Rank | Returns the Rank of a Matrix | ❌ |
-| Projection | Returns a Projection Matrix | ❌ |
+| [Add](#add) | Adds two vectors or matrices element-wise | ✅ |
+| [Sub](#sub) | Subtracts two vectors or matrices element-wise | ✅ |
+| [Scl](#scl) | Scales a vector or matrix by a scalar | ✅ |
+| [Linear Combination](#linear-combination) | Returns a linear combination of vectors with given coefficients | ✅ |
+| [Linear Interpolation](#linear-interpolation) | Returns the linear interpolation between two values | ✅ |
+| [Dot Product](#dot-product) | Returns the sum of the element-wise products of two vectors | ✅ |
+| [Norm](#norm) | Returns different kinds of norms of a vector | ✅ |
+| [Cosine](#cosine) | Returns the cosine of the angle between two vectors | ✅ |
+| [Cross Product](#cross-product) | Returns the cross product of two 3D vectors | ❌ |
+| [Matrix Multiplication](#matrix-multiplication) | Returns the result of the product of two matrix or a matrix with a vector | ✅ |
+| [Trace](#trace) | Returns the Trace of the Square Matrix | ✅ |
+| [Transpose](#transpose) | Returns the Transpose of a Matrix | ✅ |
+| [Row-Echelon Form](#row-echelon-form) Form | Returns the Row-Echelon Form of the Matrix | ❌ |
+| [Determinant](#determinant) | Returns the Deterninant of the Matrix | ❌ |
+| [Inverse](#inverse) | Returns the Inverse Matrix of a Matrix if it's possible | ❌ |
+| [Rank](#rank) | Returns the Rank of a Matrix | ❌ |
+| [Projection](#projection) | Returns a Projection Matrix | ❌ |
 
 ## Documentation
 
