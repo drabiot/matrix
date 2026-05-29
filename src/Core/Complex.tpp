@@ -6,9 +6,14 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 13:59:19 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 14:13:50 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/29 15:12:21 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+template<typename K>
+static K clean_zero(K val) {
+	return (val == static_cast<K>(0)) ? static_cast<K>(0) : val;
+}
 
 template<typename T>
 struct is_complex : std::false_type {};
@@ -35,4 +40,15 @@ inline auto fma_wrapper(const A& a, const B& b, const C& c) {
 	}
 	else
 		return (a * static_cast<A>(b) + c);
+}
+
+template<typename K>
+static double pivot_norm(const K& val) {
+	if constexpr (is_complex_v<K>) {
+		double r = static_cast<double>(val.real());
+		double i = static_cast<double>(val.imag());
+		return (r * r + i * i);
+	} else {
+		return (static_cast<double>(val < 0 ? -val : val));
+	}
 }

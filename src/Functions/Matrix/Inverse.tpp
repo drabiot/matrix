@@ -6,25 +6,9 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 14:22:15 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/29 15:06:44 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/29 15:12:07 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-template<typename K>
-static double pivot_norm(const K& val) {
-	if constexpr (is_complex_v<K>) {
-		double r = static_cast<double>(val.real());
-		double i = static_cast<double>(val.imag());
-		return (r * r + i * i);
-	} else {
-		return (static_cast<double>(val < 0 ? -val : val));
-	}
-}
-
-template<typename K>
-static K clean_zero(K val) {
-	return (val == static_cast<K>(0)) ? static_cast<K>(0) : val;
-}
 
 // Time complexity:  O(n³)
 // Space complexity: O(n²)

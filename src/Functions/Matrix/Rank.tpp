@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 15:55:06 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/27 13:19:52 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/29 15:09:57 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	Matrix<K>::rank() {
 
 	for (size_t	i = 0; i < tmp.getRows(); ++i) {
 		for (size_t j = 0; j < tmp.getCols(); ++j) {
-			if (tmp.getContent()[i][j] != 0) {
+			if (pivot_norm(tmp.getContent()[i][j]) > 1e-9) {
 				res++;
 				break;
 			}
