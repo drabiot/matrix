@@ -102,7 +102,7 @@ Open the project
 | [Transpose](#transpose) | Returns the Transpose of a Matrix | ✅ | ❌ | ✅ |
 | [Row-Echelon Form](#row-echelon-form) | Returns the Row-Echelon Form of the Matrix | ✅ | ❌ | ✅ |
 | [Determinant](#determinant) | Returns the Deterninant of the Matrix | ✅ | ❌ | ✅ |
-| [Inverse](#inverse) | Returns the Inverse Matrix of a Matrix if it's possible | ❌ | ❌ | ✅ |
+| [Inverse](#inverse) | Returns the Inverse Matrix of a Matrix if it's possible | ✅ | ❌ | ✅ |
 | [Rank](#rank) | Returns the Rank of a Matrix | ❌ | ❌ | ✅ |
 | [Projection](#projection) | Returns a Projection Matrix | ❌ | ❌ | ✅ |
 
