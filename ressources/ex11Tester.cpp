@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 18:15:10 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 17:39:11 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/05/29 14:40:39 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,39 @@ void	determinantTester() {
 	PRINT m5;
 	PRINT BLUE "Determinant of the Fifth Matrix" CENDL;
 	PRINT CYAN AND m5.determinant() CENDL;						//Error
+	NLINE;
+
+	PRINT WHITE "  -BONUS-  " CENDL;
+	Matrix<std::complex<double>>bonusA = {
+		{std::complex<double>(1,2),  std::complex<double>(3,-1), std::complex<double>(0,4)},
+		{std::complex<double>(-1,1), std::complex<double>(2,0),  std::complex<double>(1,-3)},
+		{std::complex<double>(0,-2), std::complex<double>(4,1),  std::complex<double>(2,2)}
+	};
+
+	Matrix<std::complex<double>>bonusB = {
+		{std::complex<double>(128,-1), std::complex<double>(0,2), std::complex<double>(-0,6)},
+		{std::complex<double>(-1,0), std::complex<double>(24,1),  std::complex<double>(1,-1)},
+		{std::complex<double>(4,1),  std::complex<double>(-21,0), std::complex<double>(0,32)}
+	};
+
+	Matrix<std::complex<double>> bonusC = {
+		{std::complex<double>(1, 1), std::complex<double>(2, 2)},
+		{std::complex<double>(2, 2), std::complex<double>(4, 4)},
+	};
+
+	PRINT MAGENTA "Fist Bonus Matrix:" CENDL;
+	PRINT bonusA;
+	PRINT BLUE "Determinant of the First Bonus Matrix" CENDL;
+	PRINT CYAN AND bonusA.determinant() CENDL;
+	NLINE;
+	PRINT MAGENTA "Second Bonus Matrix:" CENDL;
+	PRINT bonusB;
+	PRINT BLUE "Determinant of the Second Bonus Matrix" CENDL;
+	PRINT CYAN AND bonusB.determinant() CENDL;
+	NLINE;
+	PRINT MAGENTA "Third Bonus Matrix:" CENDL;
+	PRINT bonusC;
+	PRINT BLUE "Determinant of the Third Bonus Matrix" CENDL;
+	PRINT CYAN AND bonusC.determinant() CENDL;
 	NLINE;
 }
