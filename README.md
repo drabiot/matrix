@@ -86,7 +86,7 @@ Open the project
 
 ## Functions
 
-| Function | Description | Work for<br>Complex Nb | Vector<br>Mem. Func | Matrix<br>Mem. Func. |
+| Function | Description | Work with<br>Complex Nb. | Vector<br>Mem. Func. | Matrix<br>Mem. Func. |
 | -------- | ----------- | :-----------------: | :----: | :----: |
 | [Add](#add) | Adds two vectors or matrices element-wise | ✅ | ✅ | ✅ |
 | [Sub](#sub) | Subtracts two vectors or matrices element-wise | ✅ | ✅ | ✅ |
