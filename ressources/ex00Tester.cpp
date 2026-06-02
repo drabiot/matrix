@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:19:53 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 17:25:27 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/06/02 13:44:09 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	addTesterMatrix() {
 	Matrix<double> a = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
 	Matrix<double> b = {{2.5, 4.4, 2.9}, {-1.2, -5.0, 6.5}, {3.3, 4.2, -9.0}};
 	Matrix<double> c = {{2.5, 4.4, 2.9}, {-1.2, -5.0, 6.5}};
-	Matrix<double> d = {{-1.2, -5.0, 6.5, 4.2}};
+	Matrix<double> d = {{-1.2, -5.0, 6.5, 4.2, 6.3}};
 
 	Matrix<std::complex<double>> bonusA = {
 		{std::complex<double>(1,2),  std::complex<double>(3,-1), std::complex<double>(0,4)},
@@ -88,7 +88,7 @@ void	addTesterMatrix() {
 	b.add(a);
 	PRINT b CENDL;
 	PRINT RED "Add Fourth Matrix to the Third Matrix" CENDL;
-	c.add(d);
+	d.add(b);
 	PRINT c CENDL;
 
 	PRINT WHITE "  -BONUS-  " CENDL;

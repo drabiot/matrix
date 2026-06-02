@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:14:06 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 17:59:08 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/06/02 13:15:15 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	matrix_multiplicationTester() {
 	PRINT RED " 2nd Test " CENDL;
 
 	PRINT MAGENTA "Compute product between Second matrix and First vector" CENDL;
-	PRINT YELLOW AND m2.mul_vec({4., 2.}) CENDL;
+	PRINT YELLOW AND m2.mul_vec({4.}) CENDL;
 	NLINE;
 
 	PRINT RED " 3rd Test " CENDL;

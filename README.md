@@ -3,6 +3,10 @@
   </h1>
 </div>
 
+<div align="center">
+   <img width="200" height="170" alt="Screenshot from 2026-01-22 17-50-47" src="https://github.com/user-attachments/assets/cb338c1d-c9f2-48b7-9a58-51001d1f1ad0" />
+</div>
+
 ---
 
 Matrix is a 42 project where you have to create a library about Vector and Matrix space.
@@ -94,7 +98,7 @@ Open the project
 | [Linear Combination](#linear-combination) | Returns a linear combination of vectors with given coefficients | ✅ |❌ | ❌ 
 | [Linear Interpolation](#linear-interpolation) | Returns the linear interpolation between two values | ✅ |❌ | ❌ 
 | [Dot Product](#dot-product) | Returns the sum of the element-wise products of two vectors | ✅ | ✅ | ❌ |
-| [Norm](#norm) | Returns different kinds of norms of a vector | ✅ | ✅ | ❌ |
+| [Norm](#norm) | Returns different kinds of norms of a vector | ⚠️ | ✅ | ❌ |
 | [Cosine](#cosine) | Returns the cosine of the angle between two vectors | ✅ |❌ | ❌ 
 | [Cross Product](#cross-product) | Returns the cross product of two 3D vectors | ✅ |❌ | ❌ 
 | [Matrix Multiplication](#matrix-multiplication) | Returns the result of the product of two matrix or a matrix with a vector | ✅ | ❌ | ✅ |
@@ -278,17 +282,17 @@ C_y
 \mathbin{=}
 \begin{bmatrix}
 A_x {\times 1 - t} + B_x {\times t} \\
-A_Y {\times 1 - t} + B_y {\times t}
+A_y {\times 1 - t} + B_y {\times t}
 \end{bmatrix}
 \mathbin{=}
 \begin{bmatrix}
 A_x - A_x {\times t} + B_x {\times t} \\
-A_Y - A_y {\times t} + B_y {\times t}
+A_y - A_y {\times t} + B_y {\times t}
 \end{bmatrix}
 \mathbin{=}
 \begin{bmatrix}
 A_x + (B_x - A_x) {\times t} \\
-A_Y + (B_y - A_y) {\times t}
+A_y + (B_y - A_y) {\times t}
 \end{bmatrix}
 ```
 ```math
@@ -884,7 +888,7 @@ Matrix<K>	Matrix<K>::determinant(void);
 
 | Overload | Time complexity | Space complexity |
 |---|---|---|
-| determinant | O(nn³) | O(nn²) |
+| determinant | O(nm³) | O(nm²) |
 
 ```cpp
 Matrix<double>	m1({{1., 0.}, {0., 1.}});
@@ -1069,7 +1073,7 @@ Matrix<K>	Matrix<K>::inverse(void);
 
 | Overload | Time complexity | Space complexity |
 |---|---|---|
-| inverse | O(nn³) | O(nn²) |
+| inverse | O(nm³) | O(nm²) |
 
 ```cpp
 Matrix<double>	m1({{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}});

@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:25:07 by tchartie          #+#    #+#             */
-/*   Updated: 2026/05/28 13:23:39 by tchartie         ###   ########.fr       */
+/*   Updated: 2026/06/02 13:12:10 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	dot_productTester(void) {
 
 	PRINT RED " 4th Test " CENDL;
 	Vector	<double>g({-1, 6});
-	Vector	<double>h({3, 2});
+	Vector	<double>h({3});
 
 	PRINT MAGENTA "Seven Vector:" CENDL;
 	PRINT g CENDL;
